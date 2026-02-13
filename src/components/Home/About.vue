@@ -55,13 +55,12 @@ import Introduction from '../Layout/Introduction.vue'
 import Bento from '../Layout/Bento.vue'
 import CTAButton from '../Layout/CTAButton.vue'
 
-import profile from '/src/assets/profile.png'
 import TwoColumn from '../Layout/TwoColumn.vue'
 
 const headingContents = reactive([
   {
-    imageSrc: profile,
-    imageAlt: 'Profile Picture',
+    // imageSrc: profile,
+    // imageAlt: 'Profile Picture',
     title: 'About Me',
   },
 ])
