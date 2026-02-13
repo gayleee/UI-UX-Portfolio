@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import profile from '/src/assets/profile.png'
+import profile from '@/assets/profile.png'
 </script>
 
 <style>
