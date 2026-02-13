@@ -88,7 +88,7 @@ const ctaContents = reactive([
 const introContents = reactive([
   {
     firstParagraph:
-      "Hello! I'm Cath and I recently graduated from Polytechnic University of the Philippines — Sto. Tomas Campus with a degree in Information Technology.",
+      "Hello! I'm Cath and I recently graduated from Polytechnic University of the Philippines with a degree in Information Technology.",
     secondParagraph:
       "My UI/UX journey formally began in college when a simple website project transformed my curiosity to passion. Since then, I've taught myself to conduct user research, create design systems, and translate ideas into user friendly digital experiences. I am able to apply these during my internship at MabuhayPower Holdings Corporation with a primary role of a web designer and even on my designs at present.",
   },
