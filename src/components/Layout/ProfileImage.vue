@@ -1,12 +1,14 @@
 <template>
   <div class="mt-5 pt-5 text-center">
     <router-link>
-      <img src="/profile.png" alt="Profile Image" />
+      <img :src="profile" alt="Profile Image" />
     </router-link>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import profile from '@/assets/profile.png'
+</script>
 
 <style>
 img {
