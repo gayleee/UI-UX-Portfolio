@@ -19,9 +19,9 @@
           the user's hardware fails? My answer is to provide redundant options that respect the
           user’s constraints. <br />
           <br />
-          By exploring art, animation, and a new language, I’ve learned to design with a
-          consideration not just the person behind the screen, but the engineers and artists working
-          alongside me to bring the vision to life.
+          By exploring art, animation, and many more, I’ve learned to design with a consideration
+          not just the person behind the screen, but the engineers and artists working alongside me
+          to bring the vision to life.
           <br />
           <br />
           You may also explore my designs outside UI/UX below:
