@@ -55,7 +55,7 @@ import Introduction from '../Layout/Introduction.vue'
 import Bento from '../Layout/Bento.vue'
 import CTAButton from '../Layout/CTAButton.vue'
 
-import profile from '/src/assets/profile.png'
+// import profile from '/src/assets/profile.png'
 import TwoColumn from '../Layout/TwoColumn.vue'
 
 const headingContents = reactive([
