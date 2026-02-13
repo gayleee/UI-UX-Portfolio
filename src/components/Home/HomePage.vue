@@ -25,6 +25,12 @@
     <div>
       <ProfileImage></ProfileImage>
     </div>
+    <!--SubHeading-->
+    <div class="d-flex align-items-center justify-content-center">
+      <h4 class="mt-4">
+        Hello! I’m Cath—A UI/UX designer and Web designer based in the Philippines.
+      </h4>
+    </div>
   </div>
 </template>
 
