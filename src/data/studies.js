@@ -29,6 +29,7 @@ import excellCardFinal from '@/assets/excellAssets/excellCardFinal.webp'
 import excellCardLive from '@/assets/excellAssets/excellCardLive.webp'
 import excellGuide from '@/assets/excellAssets/excellGuide.webp'
 import excellFile from '@/assets/excellAssets/excellFile.webp'
+import excellMetric from '@/assets/excellAssets/excellMetric.webp'
 
 import ticaBanner from '@/assets/ticaAssets/ticaBanner.webp'
 import ticaDraft from '@/assets/ticaAssets/ticaDraft.webp'
@@ -411,14 +412,12 @@ The second iteration successfully addressed the page length constraint, distilli
       },
       {
         name: `The Process`,
-        contentTitle: `Identifying Usability and Trust Gaps`,
-        contentDesc: `The original Projects page, which is a critical proof point for the company's capabilities, utilized a CMS-driven carousel displaying project images with limited metadata; see Figure 1.3. This structure suffered from two major usability and trust losses:
+        contentTitle: `Identifying Previous Design Gaps`,
+        contentDesc: `The original Projects page, which is a critical proof point for the company's capabilities, utilized a CMS-driven carousel displaying project images with limited metadata; see Figure 1.3. This structure suffered from a major issue:
 
 1. Accessibility and SEO best practices: Relying solely on images to convey project information—a “burned-in” or “baked-in” text (text is part of the image itself and has no alternative text)—creates accessibility barriers and risks a poor user experience on slow connections. Additionally, this information blocks the visual assets and prevents the visitor from viewing the whole image, and the text heavily relies on an overlay to be clearly read. When it comes to SEO, search engines cannot index burned-in information.
 
-2. Conversion Barrier: The lack of immediate, verifiable data on the previous design failed to provide solid proof of work, thus leading us to ask ourselves a question: "If a customer cannot instantly verify the legitimacy and scale, what is their immediate response?" The answer is a loss of trust and immediate turn to competitors.
-
-In order to solve these problems, we came up with various design sprint but we felt something is lacking. See figure 1.4`,
+In order to solve theis problem, we came up with various design sprint but we felt something is lacking. See figure 1.4`,
         contentImages: [
           {
             contentUrl: excellCardDraft,
@@ -468,11 +467,23 @@ This layout ensures customers immediately see what the project appears to be in 
           },
         ],
       },
+      {
+        name: ``,
+        contentTitle: `Quantifiable Results`,
+        contentDesc: `At the end of the project, our key success identifier is the overall performance of the website.  We were able to get an overwhelming improvement from the legacy website, and the revamp gained an overall performance of 96%, accessibility of 79%, best practices of 96%, and SEO of 82%, as illustrated below using Google Lighthouse:`,
+        contentImages: [
+          {
+            contentUrl: excellMetric,
+            contentAlt: `sample`,
+            contentImgDesc: `Figure 1.9. The revamped website's lighthouse metric score`,
+          },
+        ],
+      },
     ],
     goals: [
       {
-        heading: `Significantly Imporved Lighthouse Metrics`,
-        desc: `At the end of the project, our key success identifier is the overall performance of the website.  We were able to get an overwhelming improvement from the legacy website, and the revamp gained an overall performance of 96%, accessibility of 79%, best practices of 96%, and SEO of 82%, as illustrated in Figure 1.8 above.`,
+        heading: `Future Proofed Desgin`,
+        desc: `By successfully creating a CMS-ready design and providing onboarding documentation, we effectively eliminated the dependency on a design team for daily updates and the design integrity remains intact.`,
       },
       {
         heading: `Established a Design System and Library`,

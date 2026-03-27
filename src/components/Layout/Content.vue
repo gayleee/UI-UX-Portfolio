@@ -15,7 +15,11 @@
         </div>
 
         <div class="row g-4">
-          <figure v-for="(img, i) in contents.contentImages" :key="i" class="col-12 col-lg-6">
+          <figure
+            v-for="(img, i) in contents.contentImages"
+            :key="i"
+            :class="['col-12', contents.contentImages.length > 1 ? 'col-lg-6' : 'col-lg-12']"
+          >
             <a
               role="button"
               data-bs-toggle="modal"
@@ -35,6 +39,8 @@
               tabindex="-1"
               aria-hidden="true"
               data-bs-focus="false"
+              data-bs-backdrop="true"
+              data-bs-keyboard="true"
             >
               <div class="modal-dialog modal-fullscreen modal-dialog-centered">
                 <div class="modal-content">
@@ -101,6 +107,12 @@ const props = defineProps({
 
 .btn-custom-orange:focus {
   box-shadow: 0 0 0 0.25rem rgba(239, 89, 8, 0.25);
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+  max-height: 70vh;
 }
 
 @media only screen and (max-width: 600px) {
