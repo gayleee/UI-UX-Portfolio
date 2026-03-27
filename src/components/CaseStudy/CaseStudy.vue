@@ -1,35 +1,114 @@
 <template>
-  <div v-if="study">
-    <Header :heading="study.heading.title"></Header>
-    <Highlight></Highlight>
-    <Introduction></Introduction>
-    <Bento></Bento>
-    <CTAButton></CTAButton>
-    <Role></Role>
-  </div>
+  <section class="container hero min-vh-100 d-flex flex-column justify-content-center">
+    <div class="row g-0">
+      <div class="col-12">
+        <div v-if="currentStudy" class="py-5">
+          <Header :heading="currentStudy.name" class="mt-4 text-center" />
+
+          <Highlight
+            :highlight="currentStudy.highlightData"
+            :theme="currentStudy.highlightData.theme"
+          />
+          <Introduction :intro="currentStudy.desc" />
+          <IntroImage :introImage="currentStudy.introData" />
+
+          <div
+            class="d-flex flex-wrap flex-column flex-md-row justify-content-center align-items-center gap-3 mt-5"
+          >
+            <SecondaryButton />
+            <CTAButton
+              v-if="!currentStudy.calloutData.isNDA"
+              :cta="currentStudy.ctaData"
+              :url="currentStudy.url"
+              :isExternal="currentStudy.link"
+            />
+            <Callout v-else :callout="currentStudy.calloutData.ndaMessage" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-fluid darker-bg-dark py-5">
+    <div class="row g-0">
+      <div class="col-12 d-flex flex-column align-items-center">
+        <h4 class="text-light mb-4">My Role</h4>
+
+        <Highlight
+          :highlight="currentStudy.roleData"
+          :theme="currentStudy.roleData.theme"
+          class="w-100"
+        />
+        <p class="text-light text-center px-3">{{ currentStudy.roleDesc }}</p>
+      </div>
+    </div>
+  </section>
+
+  <Content
+    v-for="(item, index) in currentStudy.contents"
+    :key="index"
+    :contents="item"
+    :section-index="index"
+  />
+
+  <section class="container deepImpact">
+    <h4 class="mb-4 pb-4 ps-2">Impact and Outcomes</h4>
+    <div v-for="(item, index) in currentStudy.goals" :key="index">
+      <Goal :goal="item" />
+    </div>
+  </section>
+
+  <section class="container deepImpact">
+    <h4 class="mb-4">Learnings and Reflection</h4>
+    <div v-for="(item, index) in currentStudy.learnings" :key="index">
+      <Learnings :learning="item" />
+    </div>
+  </section>
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import { useRoute } from 'vue-router'
-import { reactive, computed } from 'vue'
+import { studies } from '@/data/studies'
 
 import Header from '../Layout/Header.vue'
-import Bento from '../Layout/Bento.vue'
 import Highlight from '../Layout/Highlight.vue'
 import Introduction from '../Layout/Introduction.vue'
 import CTAButton from '../Layout/CTAButton.vue'
-import Role from '../Layout/Role.vue'
-
-import screenshot1 from '/src/assets/ootuScreenshots/Zak_screen.png'
-import screenshot2 from '/src/assets/ootuScreenshots/Gale_screen.png'
-import screenshot3 from '/src/assets/ootuScreenshots/Viktor_screen.png'
+import Content from '../Layout/Content.vue'
+import IntroImage from '../Layout/IntroImage.vue'
+import Callout from '../Layout/Callout.vue'
+import SecondaryButton from '../Layout/SecondaryButton.vue'
+import Goal from '../Layout/Goal.vue'
+import Learnings from '../Layout/Learnings.vue'
 
 const route = useRoute()
-const id = route.params.caseStudyId
 
-// const study = computed(() => {
-//   return caseStudies.find((p) => p.caseStudyId === route.params.caseStudyId)
-// })
+const studySlug = route.params.slug
 
-console.log(route.params)
+const currentStudy = studies.find((s) => s.slug === studySlug)
+
+// console.log(route.params)
+// console.log(currentStudy.roleData.theme)
 </script>
+
+<style scoped>
+.darker-bg-dark p {
+  padding: 0;
+  /* margin: 48px auto; */
+  max-width: 1000px;
+}
+.deepImpact {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 600px) {
+  section.darker-bg-dark {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+</style>

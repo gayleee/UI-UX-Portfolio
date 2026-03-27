@@ -1,39 +1,50 @@
 <template>
-  <footer class="text-center m-5">
-    <div class="d-flex justify-content-center gap-4">
-      <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-envelope-fill"></i></a>
-      <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
-      <a href="https://x.com/cath_uiux" target="_blank" rel="noopener noreferrer"
-        ><i class="bi bi-twitter-x"></i
-      ></a>
-      <a
-        href="https://bsky.app/profile/cath-uiux.bsky.social"
-        target="_blank"
-        rel="noopener noreferrer"
-        ><i class="bi bi-bluesky"></i
-      ></a>
-    </div>
-    <!--Divider-->
-    <hr />
-    <!--Copyright-->
-    <div class="text-center p-3">
-      <small>cath_ui-ux © 2026. All rights reserved.</small>
+  <footer class="footer-container">
+    <div class="container h-100 d-flex flex-column justify-content-between">
+      <div class="footer-top">
+        <div class="d-flex justify-content-center gap-5">
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+            aria-label="LinkedIn"
+          >
+            <linkedinIcon class="icon-svg" />
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X">
+            <xtwitterIcon class="icon-svg" />
+          </a>
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+            aria-label="BlueSky"
+          >
+            <blueskyIcon class="icon-svg" />
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-divider-wrapper">
+        <hr class="footer-hr" />
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Cath_UI/UX Portfolio. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 </template>
 
 <script setup>
+import linkedinIcon from '../icons/linkedinIcon.vue'
+import xtwitterIcon from '../icons/xtwitterIcon.vue'
+import blueskyIcon from '../icons/blueskyIcon.vue'
+
 const props = defineProps({
   type: Object,
   required: true,
 })
 </script>
-
-<style>
-hr {
-  margin: 30px 0;
-  height: 1px;
-  border: none;
-  background: linear-gradient(to right, transparent 0%, black 50%, transparent 100%);
-}
-</style>

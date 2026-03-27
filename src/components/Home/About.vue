@@ -1,95 +1,104 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <!--Profile Image-->
-      <ProfileImage></ProfileImage>
-      <!--Heading-->
-      <div v-for="headingContent in headingContents" :key="headingContent.title">
-        <Header :heading="headingContent"></Header>
-      </div>
-      <!--Highlight-->
-      <div v-for="highlightContent in highlightContents" :key="highlightContent.primaryText">
-        <Highlight :highlight="highlightContent"></Highlight>
-      </div>
-      <!--Body Text-->
-      <div v-for="introContent in introContents" :key="introContent.firstParagraph">
-        <Introduction :intro="introContent"></Introduction>
-      </div>
-      <!--CTA Button-->
-      <div v-for="ctaContent in ctaContents" :key="ctaContent.label">
-        <CTAButton :cta="ctaContent"></CTAButton>
-      </div>
-    </div>
-  </div>
+  <section class="about-wrapper d-flex align-items-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-11 col-md-9 col-lg-7 text-center">
+          <div class="mb-4">
+            <ProfileImage />
+          </div>
 
-  <div class="container-fluid my-5 darker-bg-dark">
-    <div class="row">
-      <!--SubHeading -->
-      <div v-for="subheadingContent in subheadingContents" :key="subheadingContent.title">
-        <SubHeader :subheading="subheadingContent"></SubHeader>
-      </div>
-      <!--Two Columns-->
-      <div>
-        <TwoColumn></TwoColumn>
-      </div>
-    </div>
-  </div>
+          <h1 class="heading mb-2">About Me</h1>
 
-  <div class="container">
-    <div class="row">
-      <h4 class="text-center mt-5 mb-4">Designs</h4>
-      <!--Bento-->
-      <Bento></Bento>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <div v-for="highlightContent in highlightContents" :key="highlightContent.primaryText">
+              <Highlight :highlight="highlightContent" :theme="highlightContent.theme" />
+            </div>
+          </div>
+
+          <p class="mb-5">
+            Hello! I’m Cath, and I recently graduated from the
+            <strong>Polytechnic University of the Philippines</strong> with a degree in information
+            technology. My UI/UX journey formally began in college when our first website project
+            transformed my curiosity to passion. Since then, I've taught myself to conduct user
+            research, create design systems, and translate ideas into digital experiences that solve
+            real-world problems. <br /><br />Today, I am actively seeking a role where I can
+            contribute to building the foundation and recognition of a product. If you're looking
+            for a designer seriously into making a simple, effective, and user-centric experience,
+            drop me a message!
+          </p>
+
+          <div v-for="ctaContent in ctaContents" :key="ctaContent.label" class="d-inline-block">
+            <CTAButton :cta="ctaContent" :url="ctaContent.url" :isExternal="ctaContent.link" />
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <section class="container">
+    <h5 class="mb-4">Awards, Recognition, and Workshops</h5>
+    <div class="d-flex flex-column gap-2">
+      <div class="card">
+        <span>Latin Honor - Cum Laude</span>
+      </div>
+      <div class="card">
+        <span>Champion, ISKOnnovation: EUREKA 2025 UI Design Competition</span>
+      </div>
+      <div class="card">
+        <span
+          >ISKOnnovation: Sparking a Culture of Innovation and Multidisciplinary Collaboration
+          towards Sustainable Future</span
+        >
+      </div>
+      <div class="card">
+        <span>Techquest: Decoding the Matrix of Software Development</span>
+      </div>
+      <div class="card">
+        <span>Empower IT: Celebrating Women In Tech | Webinar</span>
+      </div>
+      <div class="card">
+        <span
+          >Unlocking your Research Potential: Research Writing Essentials, Presentations, and
+          Publications</span
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h5 class="mb-4">Works Outside UI/UX</h5>
+    <Gallery />
+  </section>
 </template>
 
 <script setup>
 import { reactive } from 'vue'
 
-import Header from '../Layout/Header.vue'
-import SubHeader from '../Layout/SubHeader.vue'
 import ProfileImage from '../Layout/ProfileImage.vue'
 import Highlight from '../Layout/Highlight.vue'
-import Introduction from '../Layout/Introduction.vue'
-import Bento from '../Layout/Bento.vue'
 import CTAButton from '../Layout/CTAButton.vue'
-
-import TwoColumn from '../Layout/TwoColumn.vue'
-
-const headingContents = reactive([
-  {
-    // imageSrc: profile,
-    // imageAlt: 'Profile Picture',
-    title: 'About Me',
-  },
-])
-
-const subheadingContents = reactive([
-  {
-    title: 'Life Outside the Grid & Screen',
-  },
-])
+import Gallery from '../Layout/Gallery.vue'
 
 const highlightContents = reactive([
   {
-    primaryText: 'UI/UX Designer',
+    primaryText: 'Fresh Grad',
     secondaryText: 'Based in the Philippines',
+    theme: `orange`,
   },
 ])
 
 const ctaContents = reactive([
   {
-    label: 'Discover The Results',
+    label: 'Explore Work',
+    url: null,
+    link: false,
   },
 ])
 
-const introContents = reactive([
-  {
-    firstParagraph:
-      "Hello! I'm Cath and I recently graduated from Polytechnic University of the Philippines with a degree in Information Technology.",
-    secondParagraph:
-      "My UI/UX journey formally began in college when a simple website project transformed my curiosity to passion. Since then, I've taught myself to conduct user research, create design systems, and translate ideas into user friendly digital experiences. I am able to apply these during my internship at MabuhayPower Holdings Corporation with a primary role of a web designer and even on my designs at present.",
-  },
-])
+// const imageContents = reactive([
+//   {
+//     imageUrl: sample,
+//     imageAlt: `sample image alt`,
+//   },
+// ])
 </script>

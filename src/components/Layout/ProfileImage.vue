@@ -1,19 +1,29 @@
 <template>
-  <div class="mt-5 pt-5 text-center">
-    <router-link to="/about">
+  <div class="d-flex align-items-center justify-content-center mt-4 pt-4">
+    <router-link v-if="isHomePage" to="/about">
       <img :src="profile" alt="Profile Image" />
     </router-link>
+
+    <img v-else :src="profile" alt="Profile Image" />
   </div>
 </template>
 
 <script setup>
-import profile from '@/assets/profile.png'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import profile from '@/assets/profile.webp'
+
+const route = useRoute()
+
+const isHomePage = computed(() => {
+  return route.path !== '/about'
+})
 </script>
 
 <style scoped>
 img {
   width: 200px;
   height: 200px;
-  border-radius: 16px;
+  border-radius: 4px;
 }
 </style>

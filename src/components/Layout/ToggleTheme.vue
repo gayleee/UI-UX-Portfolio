@@ -1,7 +1,16 @@
 <template>
-  <span class="pe-2">{{ isDark ? 'Dark' : 'Light' }}</span>
-  <div class="form-check form-switch" @click="toggleTheme">
-    <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault" />
+  <label for="switchCheckDefault"
+    ><span class="pe-2">{{ isDark ? 'Dark' : 'Light' }}</span></label
+  >
+  <div class="form-check form-switch">
+    <input
+      v-model="isDark"
+      class="form-check-input"
+      type="checkbox"
+      role="switch"
+      id="switchCheckDefault"
+      @click="toggleTheme"
+    />
   </div>
 </template>
 
@@ -12,7 +21,7 @@ const { isDark, toggleTheme } = useTheme()
 
 <style scoped>
 .form-switch .form-check-input:checked {
-  background-color: #402dcc;
-  border-color: #402dcc;
+  background-color: #ef5908;
+  border-color: #ef5908;
 }
 </style>

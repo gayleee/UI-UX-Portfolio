@@ -1,58 +1,60 @@
 <template>
-  <div class="d-flex justify-content-center align-items-center gap-2 my-4">
-    <span class="fw-medium secondaryText">{{ highlight.secondaryText }}</span>
-    <div :class="circleColor" class="circle"></div>
-    <span :class="textColor" v-if="highlight.primaryText" class="greenPrimaryText">{{
-      highlight.primaryText
-    }}</span>
+  <div
+    class="highlight-container d-flex justify-content-center align-items-center flex-wrap gap-2 my-4"
+    :class="highlight.theme"
+  >
+    <span class="secondaryText">{{ highlight.secondaryText }}</span>
+    <div class="circle"></div>
+    <span class="primaryText">{{ highlight.primaryText }}</span>
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import { useRoute } from 'vue-router'
-
-const route = useRoute()
-
-const isHomePage = computed(() => route.path === '/')
-
-const textColor = computed(() => {
-  return isHomePage.value ? 'greenPrimaryText' : 'purplePrimaryText'
-})
-
-const circleColor = computed(() => {
-  return isHomePage.value ? 'greenCircle' : 'purpleCircle'
-})
-
 const props = defineProps({
   highlight: {
     type: Object,
-    required: false,
+    default: () => ({
+      primaryText: '',
+      secondaryText: '',
+      theme: 'green',
+    }),
   },
 })
 </script>
 
-<style>
-.greenPrimaryText {
-  color: #2ab075;
-  font-size: 18px;
-  font-weight: 500;
-}
-.purplePrimaryText {
-  color: #402dcc;
-  font-size: 18px;
-  font-weight: 500;
-}
-.greenCircle {
+<style scoped>
+.circle {
   width: 8px;
   height: 8px;
-  background-color: #2ab075;
   border-radius: 50%;
+  flex-shrink: 0;
 }
-.purpleCircle {
-  width: 8px;
-  height: 8px;
-  background-color: #402dcc;
-  border-radius: 50%;
+.secondaryText,
+.primaryText {
+  white-space: normal;
+  max-width: 100%;
+}
+
+.lightOrange .primaryText {
+  color: var(--lighter-accent);
+  font-size: 18px;
+  text-align: center;
+}
+.lightOrange .secondaryText {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+.lightOrange .circle {
+  background-color: var(--lighter-accent);
+}
+
+.orange .primaryText {
+  color: var(--accent-color);
+  font-size: 18px;
+  text-align: center;
+}
+.orange .circle {
+  background-color: var(--accent-color);
 }
 </style>

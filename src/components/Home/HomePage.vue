@@ -1,126 +1,221 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="my-5 py-5">
+  <main class="container vh-100 d-flex align-items-center justify content-center" id="hero-section">
+    <div class="row my-5 py-5 g-0">
+      <div
+        class="d-flex flex-column align-items-center justify-content-center mt-5 pt-5 greeting-container"
+      >
         <!--Heading-->
-        <div v-for="headingContent in headingContents" :key="headingContent.title">
-          <Header :heading="headingContent"></Header>
-        </div>
+        <transition name="fade" mode="out-in">
+          <span :key="currentGreeting.language" class="language">
+            {{ currentGreeting.language }}
+          </span>
+        </transition>
+        <h1 class="heading text-center">
+          I design UI/UX across diverse niches—building systems that solves real-world problems.
+        </h1>
         <!--Highlight-->
-        <div v-for="highlightContent in highlightContents" :key="highlightContent.primaryText">
+        <div
+          v-for="highlightContent in highlightContents"
+          :key="highlightContent.primaryText"
+          class="mb-5"
+        >
           <Highlight :highlight="highlightContent"></Highlight>
         </div>
+
         <!--CTA Button-->
-        <div v-for="ctaContent in ctaContents" :key="ctaContent.label">
-          <CTAButton :cta="ctaContent"></CTAButton>
+        <div class="hero-section">
+          <CTAButton
+            v-if="ctaContents[0]"
+            :cta="ctaContents[0]"
+            :url="ctaContents[0].url"
+            :isExternal="ctaContents[0].link"
+          />
         </div>
       </div>
-      <!--Case Study List-->
-      <h4>Case Studies</h4>
-      <div v-for="caseStudy in caseStudies" :key="caseStudy.name" class="col">
-        <CaseStudyList :case-study="caseStudy"></CaseStudyList>
+    </div>
+  </main>
+
+  <!--Logo-->
+  <div class="container-fluid darker-bg-dark" id="client-section">
+    <div class="row">
+      <div class="col d-flex flex-column align-items-center justify-content-center p-3 p-md-5">
+        <h5 class="text-light text-center m-4">Worked with</h5>
+
+        <div class="d-flex flex-wrap gap-4 justify-content-center">
+          <img
+            v-for="logo in logos"
+            :key="logo.url"
+            :src="logo.url"
+            :alt="logo.alt"
+            class="img-fluid logo"
+          />
+        </div>
       </div>
     </div>
-    <!--Profile Image-->
-    <div>
-      <ProfileImage></ProfileImage>
-    </div>
-    <!--SubHeading-->
-    <div class="d-flex align-items-center justify-content-center">
-      <h4 class="mt-4">
-        Hello! I’m Cath—A UI/UX designer and Web designer based in the Philippines.
-      </h4>
-    </div>
   </div>
+
+  <section class="container">
+    <div class="row">
+      <div class="col mt-5 pt-5">
+        <!--Case Studies-->
+        <h5>Case Studies</h5>
+        <div v-for="study in studies" :key="study.id" class="col">
+          <CaseStudyList :caseStudy="study" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-fluid darker-bg-dark" id="bio-section">
+    <div class="row">
+      <div class="col">
+        <!--Profile Image-->
+        <ProfileImage />
+        <!--SubHeading-->
+        <div class="text-center mb-5">
+          <h4 class="mt-4 text-light">All Roads Lead to Design.</h4>
+          <p style="color: #f8f8f8">
+            No matter the complexity, the path to a scalable result always circles back to
+            intentional design. Let’s build that together.
+          </p>
+        </div>
+        <!--CTA Button-->
+        <div class="bio-section">
+          <CTAButton
+            v-if="ctaContents[1]"
+            :cta="ctaContents[1]"
+            :url="ctaContents[1].url"
+            :isExternal="ctaContents[1].link"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
 import { reactive } from 'vue'
 import { useRouter } from 'vue-router'
+import { studies } from '@/data/studies'
 
-import Header from '../Layout/Header.vue'
+// import Header from '../Layout/Header.vue'
 import CaseStudyList from '../CaseStudy/CaseStudyList.vue'
 import ProfileImage from '../Layout/ProfileImage.vue'
 import Highlight from '../Layout/Highlight.vue'
 import CTAButton from '../Layout/CTAButton.vue'
 
-import ticaThumbnail from '/src/assets/thumbnails/TicaThumbnail.png'
-import excellThumbnail from '/src/assets/thumbnails/ExcellThumbnail.png'
-import niicheThumbnail from '/src/assets/thumbnails/NiicheThumbnail.png'
-import ootuThumbnail from '/src/assets/thumbnails/OrderoftheUndeadThumbnail.png'
+import chanchan from '/src/assets/clientLogos/chanchangames.webp'
+import excell from '/src/assets/clientLogos/excell.webp'
+import healspace from '/src/assets/clientLogos/healspace.webp'
 
-const caseStudies = reactive([
+const greetings = [
   {
-    caseStudyId: 0,
-    imageUrl: ootuThumbnail,
-    imageAlt: "I'm Gonna Be Evil - Visual Novel Thumbnail",
-    name: "I'm Gonna Be Evil - Visual Novel",
-    length: 'December 2025 - January 2026',
-    readTime: '• 15 min read',
-    desc: 'A visual novel project is to be released soon on Steam. I am given a huge opportunity to work on a new visual novel by the same game developer studio whom I had already worked with in the past. This particular game is optimized for Steam Deck and has given me a new challenge to design for multiple platforms outside my domain.',
+    language: `Hello! I'm Cath,`,
   },
   {
-    caseStudyId: 1,
-    imageUrl: ootuThumbnail,
-    imageAlt: 'Order of the Undead Project Thumbnail',
-    name: 'Order of the Undead - Spooktober 7th Annual Visual Novel Jam',
-    length: 'September 2025',
-    readTime: '• 10 min read',
-    desc: 'A visual novel project with Halloween themes competing against almost 200 entries. As a member of a truly passionate team, I was able to experience firsthand the incredible creative freedom of game development, as well as the important technical and design constraints that shape a project. This game was a labor of love, and a testament to what a dedicated team can achieve together.',
-    icon: 'bi bi-trophy-fill',
-    award: 'Overall 45th out of 250 entries, Visual Novel Jam 2025',
+    language: `Hello! Ako si Cath,`,
   },
   {
-    caseStudyId: 2,
-    imageUrl: niicheThumbnail,
-    imageAlt: 'Niiche Project Thumbnail',
-    name: 'Niiche Web Platorm',
-    length: 'June 2025',
-    readTime: '• 5 min read',
-    desc: 'A web platform that is focused on connecting individuals around niche interests. A competition with predefined branding guidelines and  various tech professional that judges the work of each participant.',
-    icon: 'bi bi-trophy-fill',
-    award: 'Champion, ISKOnnovation: EUREKA 2025 UI Design Competition',
+    language: `Hallo! Ich bin Cath,`,
   },
-  {
-    caseStudyId: 3,
-    imageUrl: excellThumbnail,
-    imageAlt: 'Excell Project Thumbnail',
-    name: 'Excell Energy and Powergen Corp (EEPC) - Website Revamp',
-    length: 'March - June 2025',
-    readTime: '• 10 min read',
-    desc: 'A full website revamp for a B2B solar energy provider, completed over 3 months as an internship deliverable. This project was an intensive UI/UX journey that significantly pushed my skills and adaptability in a professional environment, proving to be my most challenging yet. My work aimed to fully enhance and modernize their digital presence and user experience.',
-  },
-  {
-    caseStudyId: 4,
-    imageUrl: ticaThumbnail,
-    imageAlt: 'TICA Project Thumbnail',
-    name: 'TICA: A Technological Innovation for Communication in Apraxia - A Mobile Application Utilizing AI-Driven Speech Therapy for Children with Apraxia',
-    length: 'August 2024 - January 2025',
-    readTime: '• 15 min read',
-    desc: 'A mobile application developed over 6 months, offering AI-powered speech therapy for children with CAS. In my dual role, I directly contributed to delivering its user-friendly design and front-end, built with Python. Notably, this project also competed in a week-long hybrid innovation event open to all PUPSTC students.',
-    icon: 'bi bi-trophy-fill',
-    award: '3rd Place, ISKOnnovation: The GDSC Ideathon 2024',
-  },
-])
+]
 
-const headingContents = reactive([
+const currentIndex = ref(0)
+const currentGreeting = ref(greetings[0])
+
+onMounted(() => {
+  setInterval(() => {
+    currentIndex.value = (currentIndex.value + 1) % greetings.length
+    currentGreeting.value = greetings[currentIndex.value]
+  }, 5000)
+})
+
+const logos = [
+  { url: chanchan, alt: `chanchan logo` },
+  { url: healspace, alt: `healspace logo` },
+  { url: excell, alt: `excell energy logo` },
+]
+
+const ctaContents = reactive([
   {
-    title:
-      "Unsure where your design should go? Don't stress the start. I build UI/UX that works today & scales tomorrow.",
-    highlight: 'Available For Work',
-    cta: 'Build & Scale Now',
+    label: `Let’s Connect`,
+    url: `/contact`,
+    link: false,
+  },
+  {
+    label: `Read Bio`,
+    url: `/about`,
+    link: false,
   },
 ])
 
 const highlightContents = reactive([
   {
-    primaryText: 'Available for work',
-  },
-])
-
-const ctaContents = reactive([
-  {
-    label: "Let's Connect",
+    primaryText: `Available for Work`,
+    secondaryText: ``,
+    theme: `green`,
   },
 ])
 </script>
+
+<style>
+.language {
+  color: #a82a04;
+  font-size: 32px;
+  font-weight: medium;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.fade-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.logo {
+  width: clamp(80px, 20vw, 144px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+.logo:hover {
+  opacity: 1;
+}
+#bio-section {
+  clip-path: polygon(0% 0%, 50% 60px, 100% 0%, 100% 100%, 0% 100%);
+  margin-top: -60px;
+  padding-top: 100px;
+}
+/* #hero-section {
+  clip-path: inset(0% 0% 0% 0% round 0 0 80px 80px);
+  position: relative;
+  z-index: 2;
+  padding-bottom: 80px;
+}
+#client-section {
+  margin-top: -80px;
+  padding-top: 100px;
+  z-index: 1;
+} */
+
+@media only screen and (max-width: 600px) {
+  section.darker-bg-dark {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+</style>

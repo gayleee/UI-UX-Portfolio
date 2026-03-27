@@ -1,46 +1,34 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="my-5 py-5">
-        <!--Heading-->
-        <div v-for="headingContent in headingContents" :key="headingContent.title">
-          <Header :heading="headingContent"></Header>
-        </div>
-        <!--Desc-->
-        <div v-for="introContent in introContents" :key="introContent.firstParagraph">
-          <Introduction :intro="introContent"></Introduction>
-        </div>
-        <!--Contact Number-->
-        <div>
-          <h4 class="text-secondary text-center">+639-XXXX-XXXXX</h4>
-        </div>
-        <!--CTA Button-->
-        <div v-for="ctaContent in ctaContents" :key="ctaContent.label">
-          <CTAButton @click="copyNumber" :cta="ctaContent"></CTAButton>
-        </div>
-        <!--Toast-->
-        <div class="container">
-          <div class="row">
-            <div class="col d-flex justify-content-center align-items-center mt-4">
-              <div class="toast-container text-center rounded-2">
-                <div
-                  id="copyToast"
-                  class="toast align-items-center text-success bg-success bg-opacity-25 border border-success"
-                  role="alert"
-                  aria-live="assertive"
-                  aria-atomic="true"
-                >
-                  <div class="toast-body d-flex align-items-center p-1">
-                    <i class="bi bi-check text-success ms-4" style="font-size: 32px"></i>
-                    <span class="me-auto text-success">Copied to Clipboard.</span>
-                    <button
-                      type="button"
-                      class="btn-close ms-4 me-2"
-                      data-bs-dismiss="toast"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                </div>
+  <div class="contact-wrapper d-flex align-items-center justify-content-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-11 col-md-8 col-lg-6 text-center d-flex flex-column align-items-center">
+          <h1 class="mb-4">Let's Work Together</h1>
+          <p class="mb-4">
+            Let's build a 1:1 project together—you may reach out to me through the following:
+          </p>
+
+          <div class="my-4">
+            <h4 class="card">t*****c***g****8*@gmail.com</h4>
+          </div>
+
+          <div v-for="ctaContent in ctaContents" :key="ctaContent.label" class="mb-3">
+            <CTAButton @action="copyEmail" :cta="ctaContent" />
+          </div>
+
+          <div class="toast-container position-static mt-4">
+            <div
+              id="copyToast"
+              class="toast align-items-center text-success bg-success bg-opacity-10 border border-success border-opacity-50"
+              role="alert"
+              aria-live="assertive"
+              aria-atomic="true"
+              style="margin: 0 auto"
+            >
+              <div class="toast-body d-flex align-items-center p-2">
+                <checkcirclefillIcon class="me-2" />
+                <span class="me-auto fs-6">Copied to Clipboard.</span>
+                <button type="button" class="btn-close ms-3" data-bs-dismiss="toast"></button>
               </div>
             </div>
           </div>
@@ -52,39 +40,47 @@
 
 <script setup>
 import { reactive } from 'vue'
+import { Toast } from 'bootstrap'
 
-import Header from '../Layout/Header.vue'
-import Introduction from '../Layout/Introduction.vue'
 import CTAButton from '../Layout/CTAButton.vue'
+import checkcirclefillIcon from '../icons/checkcirclefillIcon.vue'
 
-const copyNumber = () => {
-  const realNumber = '+63 9XX XXX XXXX'
+const copyEmail = () => {
+  const realEmail = `torrescathgaile88@gmail.com`
 
-  navigator.clipboard.writeText(realNumber).then(() => {
+  navigator.clipboard.writeText(realEmail).then(() => {
     const toastElement = document.getElementById('copyToast')
 
-    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastElement)
-
+    const toastBootstrap = Toast.getOrCreateInstance(toastElement)
     toastBootstrap.show()
   })
 }
 
-const headingContents = reactive([
-  {
-    title: "Let's Work Together",
-  },
-])
-
-const introContents = reactive([
-  {
-    firstParagraph:
-      "Ready to launch or rebuild your digital presence? Let's discuss today. Below are my main contact channels, but you may also start a conversation through here:",
-  },
-])
-
 const ctaContents = reactive([
   {
-    label: 'Copy Contact Number',
+    label: 'Copy Email Address',
+    url: ``,
+    link: false,
   },
 ])
 </script>
+
+<style>
+.contact-wrapper {
+  padding-top: 100px;
+  padding-bottom: 60px;
+  min-height: 100vh;
+  background-color: var(--bg-main);
+}
+
+@media (max-width: 768px) {
+  .contact-wrapper {
+    padding-top: 120px;
+    min-height: 90vh;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+</style>
