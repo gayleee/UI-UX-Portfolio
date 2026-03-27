@@ -49,7 +49,7 @@ export const studies = [
     readTime: ` • 10 min read`,
     length: `August - September 2025`,
     icon: `bi bi-trophy-fill`,
-    award: `45ᵗʰ out of 240+ entries, 7ᵗʰ Annual Spooktober Jam`,
+    award: `45ᵗʰ out of 200+ entries, 7ᵗʰ Annual Spooktober Jam`,
     tag: [
       { name: 'Web', category: 'platform' },
       { name: 'Figma', category: 'tools' },
@@ -205,7 +205,7 @@ This taught me that even the most standard components must be designed with adap
       },
       {
         heading: `Style Pivot`,
-        desc: `Coming from a minimalist and corporate-based design background, this project challenged me to embrace design by storytelling, where I learned how to balance thematic elements (like the hand-drawn notebook style) with UI standards. This project is a "show, don't tell.`,
+        desc: `Coming from a minimalist and corporate-based design background, this project challenged me to embrace design by storytelling, where I learned how to balance thematic elements (like the hand-drawn notebook style) with UI standards. This project is a "show, don't tell."`,
       },
     ],
   },
@@ -380,11 +380,13 @@ The color scheme is simple: the 60-30-10 rule is applied. I also went with the c
       {
         name: `The Challenge`,
         contentTitle: `Business Alignment`,
-        contentDesc: `Since this is technically an academic competition,  we are only given 3 days to finish everything. This demanded every participant to create their own approach on handling every stage of the design process. My high-value goals:
+        contentDesc: `We were required to simultaneously learn and integrate frameworks that were new to us at the time (React/Vue and Plasmic) while managing the entire project life cycle. My co-intern and I are used to creating websites from scratch—using a website builder is not a common practice during our university studies.
 
-1. Meet all criterias.
-2. Submit a polished and organized Figma File.
-3. Submit the design on or before the event deadline.`,
+Plasmic is an open-source website builder and content manager that aims to ship products faster than traditional development. It also utilizes data sources like a content management system (CMS), Supabase, and Vercel. They also offer free and paid services that will later matter to the company goals. Despite these hurdles, we set our high-value goals:
+
+1. Align design with business requirements.
+2. Establish a design system as a basis for the next developer and content managers.
+3. Submit the internship deliverables on or before the end of our contract.`,
       },
       {
         name: `The Setup`,
@@ -486,7 +488,7 @@ This layout ensures customers immediately see what the project appears to be in 
       { name: 'Prototype', category: 'niche' },
     ],
     introData: {
-      introUrl: sample,
+      introUrl: ticaBanner,
       introAlt: `sample alt`,
     },
     ctaData: {
@@ -521,7 +523,7 @@ This layout ensures customers immediately see what the project appears to be in 
       {
         name: `The Setup`,
         contentTitle: `Project Kick-Off`,
-        contentDesc: `The project setup consist of us solving our client's needs and aligning our app to both the client and capstone requirements.`,
+        contentDesc: `Our setup consists of us aligning our app to both the client and capstone requirements with a 6-month sprint. We are a group of 5 members—I am among the three devs, our project manager, and our design lead. One of the major requirements we need to meet is integrating an AI.`,
         contentImages: [
           {
             contentUrl: ticaBanner,
@@ -537,33 +539,37 @@ This layout ensures customers immediately see what the project appears to be in 
       },
       {
         name: `The Process`,
-        contentTitle: `Layout Effectiveness`,
-        contentDesc: `Sample`,
+        contentTitle: `Developing the Lesson and Quiz Screens`,
+        contentDesc: `We came up with lessons and quizzes that are simple and easy to follow and made it into an engaging game. Each lesson chapter is based on the level in the articulation hierarchy. The articulation hierarchy is a structured approach in speech therapy to teach a child to produce a sound correctly.
+
+However, due to the project scope limitation, we opt for 4 out of 8 levels. Each chapter follows this sequence: Discrimination > Isolation > Syllables > Words. The first level, discrimination, is the step where the correct sound and the sound they make must be distinguished. Isolation is the stage where a child must produce the sound by itself. Syllables are the stages where sounds and vowels (vowel-consonant (VC) or consonant-vowel (CV)) combine. Lastly, words are the stage where a child must practice using sounds in words.
+
+The goal is to not only help the user speak a word correctly but also help them physically practice it through visuals and AI-based sound assistance; see Figure 1.4.`,
         contentImages: [
           {
-            contentUrl: ticaDraft,
+            contentUrl: ticaReference,
             contentAlt: `sample`,
-            contentImgDesc: `Figure 1.3. Sample`,
+            contentImgDesc: `Figure 1.3. Applied gated progression system where quiz modules remain locked until the prerequisite lesson content is completed`,
           },
           {
             contentUrl: ticaLesson,
             contentAlt: `sample`,
-            contentImgDesc: `Figure 1.4. Sample`,
+            contentImgDesc: `Figure 1.4. Final production lesson and quiz screens`,
           },
         ],
       },
       {
         name: ``,
         contentTitle: `Color Selection`,
-        contentDesc: `Colors are carefully selected as they are heavily important to the users to prevent overwhelming them. The palette can be changed at any momemnt in the app and we provided 6 color palette choices including the default blue and orange combination.`,
+        contentDesc: `While standard WCAG contrast ratios were a benchmark, our primary design goal was to prevent cognitive fatigue. For a younger demographic, we opted for various approach that moves away from the traditional standards. We highly emphasized soft visuals, emotional connection, and personalization.`,
         contentImages: [
           {
-            contentUrl: ticaReference,
+            contentUrl: ticaBanner,
             contentAlt: `sample`,
             contentImgDesc: `Figure 1.5. Sample`,
           },
           {
-            contentUrl: ticaDraft,
+            contentUrl: ticaReference,
             contentAlt: `sample`,
             contentImgDesc: `Figure 1.6. Sample`,
           },
