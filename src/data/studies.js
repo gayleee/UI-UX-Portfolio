@@ -27,6 +27,8 @@ import excellCardDraft from '@/assets/excellAssets/excellCardDraft.webp'
 import excellCardConcepts from '@/assets/excellAssets/excellCardConcepts.webp'
 import excellCardFinal from '@/assets/excellAssets/excellCardFinal.webp'
 import excellCardLive from '@/assets/excellAssets/excellCardLive.webp'
+import excellGuide from '@/assets/excellAssets/excellGuide.webp'
+import excellFile from '@/assets/excellAssets/excellFile.webp'
 
 import ticaBanner from '@/assets/ticaAssets/ticaBanner.webp'
 import ticaDraft from '@/assets/ticaAssets/ticaDraft.webp'
@@ -379,7 +381,7 @@ The color scheme is simple: the 60-30-10 rule is applied. I also went with the c
     contents: [
       {
         name: `The Challenge`,
-        contentTitle: `Business Alignment`,
+        contentTitle: `Rapid Technical Adaptation`,
         contentDesc: `We were required to simultaneously learn and integrate frameworks that were new to us at the time (React/Vue and Plasmic) while managing the entire project life cycle. My co-intern and I are used to creating websites from scratch—using a website builder is not a common practice during our university studies.
 
 Plasmic is an open-source website builder and content manager that aims to ship products faster than traditional development. It also utilizes data sources like a content management system (CMS), Supabase, and Vercel. They also offer free and paid services that will later matter to the company goals. Despite these hurdles, we set our high-value goals:
@@ -446,6 +448,23 @@ This layout ensures customers immediately see what the project appears to be in 
             contentUrl: excellCardLive,
             contentAlt: `sample`,
             contentImgDesc: `Figure 1.6. The final layout in actual implementation.`,
+          },
+        ],
+      },
+      {
+        name: `Project Hand-Off`,
+        contentTitle: `On-boarding Process`,
+        contentDesc: `The use of Plasmic itself is new not only to us but for the entire company as well, and we were the first to successfully integrate this tech stack. Upon final deployment of the product, I, along with my co-intern, also managed the onboarding process. We focused specifically on authoring step-by-step use of the Content Management System (CMS) of Plasmic for the company’s future developers, content managers, and editorial teams, ensuring clear instructions and efficient use of the new UI/CMS capabilities.`,
+        contentImages: [
+          {
+            contentUrl: excellGuide,
+            contentAlt: `sample`,
+            contentImgDesc: `Figure 1.7. Cover of the Onboarding Figma File`,
+          },
+          {
+            contentUrl: excellFile,
+            contentAlt: `sample`,
+            contentImgDesc: `Figure 1.8. Preview of the file`,
           },
         ],
       },
