@@ -196,7 +196,7 @@ In the story—SPOILER ALERT—our main character performs the spell in a gravey
       },
       {
         heading: `Aligned Ending Paths with UI`,
-        desc: `Aligned interface design with pre-defined narrative outcomes, maintaining the integrity of the original content through scalable UX architecture.`,
+        desc: `Aligned interface design with pre-defined narrative outcomes, maintaining the integrity of the original content through scalable UX design.`,
       },
     ],
     learnings: [

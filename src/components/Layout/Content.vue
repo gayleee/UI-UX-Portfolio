@@ -42,7 +42,7 @@
               data-bs-backdrop="true"
               data-bs-keyboard="true"
             >
-              <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+              <div class="modal-dialog modal-fullscreen">
                 <div class="modal-content">
                   <div class="modal-header border-bottom-0">
                     <h1 class="modal-title fs-5">{{ contents.contentTitle }}</h1>
@@ -109,11 +109,11 @@ const props = defineProps({
   box-shadow: 0 0 0 0.25rem rgba(239, 89, 8, 0.25);
 }
 
-img {
+/* .content-img {
   width: 100%;
   object-fit: cover;
   max-height: 70vh;
-}
+} */
 
 @media only screen and (max-width: 600px) {
   .content {
