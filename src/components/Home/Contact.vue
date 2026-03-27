@@ -5,7 +5,7 @@
         <div class="col-11 col-md-8 col-lg-6 text-center d-flex flex-column align-items-center">
           <h1 class="mb-4">Let's Work Together</h1>
           <p class="mb-4">
-            Let's build a 1:1 project together—you may reach out to me through the following:
+            Let's build a project together—you may reach out to me through the following:
           </p>
 
           <div class="my-4">

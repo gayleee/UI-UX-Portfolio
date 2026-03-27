@@ -492,7 +492,7 @@ This layout ensures customers immediately see what the project appears to be in 
     ],
     learnings: [
       {
-        heading: `Design Success is Rooted in Business-Project Synergy`,
+        heading: `Design Success in Synergy`,
         desc: `Our iterative process taught us that meeting functional requirements is only the baseline. The most significant breakthroughs happened when we looked beyond the brief to understand the broader business landscape. We realized that our objective wasn't just to build a modern website, but to build brand credibility and rebuild what the company had already established. By shifting our focus to customer trust and confidence metrics, we transformed the UI from a simple informational website into a conversion tool.`,
       },
     ],

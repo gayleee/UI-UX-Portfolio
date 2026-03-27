@@ -7,7 +7,7 @@
         alt="Tekken Brochure Front Page"
       />
       <img
-        :src="ccgamesLogo"
+        :src="jobListing"
         class="w-100 shadow-1-strong rounded mb-4"
         alt="ChanChan Games Logo Redesign Mockup"
       />
@@ -29,7 +29,7 @@
     <div class="col-lg-4 mb-4 mb-lg-0">
       <img :src="brochureBack" class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
       <img
-        :src="ccgamesLogo"
+        :src="igbeLogo"
         class="w-100 shadow-1-strong rounded mb-4"
         alt="Yosemite National Park"
       />
@@ -43,6 +43,8 @@ import brochureFront from '@/assets/galleryAssets/brochureFront.webp'
 import brochureBack from '@/assets/galleryAssets/brochureBack.webp'
 import ccgamesLogo from '@/assets/galleryAssets/ccgamesLogo.webp'
 import utahime from '@/assets/galleryAssets/utahime.webp'
+import igbeLogo from '@/assets/galleryAssets/igbeLogo.webp'
+import jobListing from '@/assets/galleryAssets/jobListing.webp'
 
 const props = defineProps({
   galleryImages: String,
