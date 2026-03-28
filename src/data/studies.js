@@ -33,8 +33,11 @@ import excellMetric from '@/assets/excellAssets/excellMetric.webp'
 
 import ticaBanner from '@/assets/ticaAssets/ticaBanner.webp'
 import ticaDraft from '@/assets/ticaAssets/ticaDraft.webp'
+import ticaDraft1 from '@/assets/ticaAssets/ticaDraft1.webp'
 import ticaLesson from '@/assets/ticaAssets/ticaLesson.webp'
 import ticaReference from '@/assets/ticaAssets/ticaReference.webp'
+import ticaAsset from '@/assets/ticaAssets/ticaAsset.webp'
+import ticaColors from '@/assets/ticaAssets/ticaColors.webp'
 
 import sample from '@/assets/sample.png'
 import trophyfillIcon from '@/components/icons/trophyfillIcon.vue'
@@ -60,8 +63,9 @@ export const studies = [
       { name: 'Design System', category: 'niche' },
     ],
     introData: {
-      introUrl: sample,
-      introAlt: `sample alt`,
+      introUrl: `/animations/ootuAnimation.webm`,
+      introMp4: `/animations/ootuAnimation.webm`,
+      introAlt: `Order of the Undead Intro Image`,
     },
     ctaData: {
       label: `View Itch.io Page`,
@@ -70,8 +74,8 @@ export const studies = [
       isNDA: false,
       ndaMessage: ``,
     },
-    url: `#`,
-    link: false,
+    url: `https://chanchangames.itch.io/order-of-the-undead`,
+    link: true,
     highlightData: {
       primaryText: `10 min read`,
       secondaryText: `August - September 2025`,
@@ -127,7 +131,7 @@ The solution is to separate them into two sides and condense the method into one
           {
             contentUrl: ootuDraftFix,
             contentAlt: `Order of the Undead Fixed Layout`,
-            contentImgDesc: `Figure 1.3: Preliminary Design Layout. The final production version was simplified to accommodate a reduced asset set while maintaining the UX principles established in this draft.`,
+            contentImgDesc: `Figure 1.3. Preliminary Design Layout. The final production version was simplified to accommodate a reduced asset set while maintaining the UX principles established in this draft.`,
           },
         ],
       },
@@ -229,10 +233,12 @@ This taught me that even the most standard components must be designed with adap
       { name: 'Web', category: 'platform' },
       { name: 'Figma', category: 'tools' },
       { name: 'Forum/Social', category: 'niche' },
+      { name: 'Prototype', category: 'niche' },
     ],
     introData: {
-      introUrl: sample,
-      introAlt: `sample alt`,
+      introUrl: `/animations/niicheAnimation.webm`,
+      introMp4: `/animations/niicheAnimation.mp4`,
+      introAlt: `Niiche Intro Image`,
     },
     ctaData: {
       label: `Read Official Brief`,
@@ -241,8 +247,8 @@ This taught me that even the most standard components must be designed with adap
       isNDA: false,
       ndaMessage: ``,
     },
-    url: `#`,
-    link: false,
+    url: `https://www.facebook.com/share/p/15piNvAXnY4/`,
+    link: true,
     highlightData: {
       primaryText: `5 min read`,
       secondaryText: `June 2025`,
@@ -269,7 +275,7 @@ With nothing but a tight deadline and skills fresh from the internship, I proudl
       {
         name: `The Setup`,
         contentTitle: `Project Kick-Off`,
-        contentDesc: `My first move was to establish clarity. I summarized the official documentation and developed a set of targeted feature questions as illustrated on Figure 1. I considered this step critical for immediately shifting focus and understanding the goal of the product.`,
+        contentDesc: `My first move was to establish clarity. I summarized the official documentation and developed a set of targeted feature questions as illustrated on Figure 1. I considered this step critical for immediately shifting focus and understanding the goal and possible problem of the product.`,
         contentImages: [
           {
             contentUrl: niicheConcept,
@@ -357,7 +363,7 @@ The color scheme is simple: the 60-30-10 rule is applied. I also went with the c
     ],
     introData: {
       introUrl: sample,
-      introAlt: `sample alt`,
+      introAlt: `Excell Energy Intro Image`,
     },
     ctaData: {
       label: ``,
@@ -470,7 +476,7 @@ This layout ensures customers immediately see what the project appears to be in 
       {
         name: ``,
         contentTitle: `Quantifiable Results`,
-        contentDesc: `At the end of the project, our key success identifier is the overall performance of the website.  We were able to get an overwhelming improvement from the legacy website, and the revamp gained an overall performance of 96%, accessibility of 79%, best practices of 96%, and SEO of 82%, as illustrated below using Google Lighthouse:`,
+        contentDesc: `At the end of the project, our key success identifier is the overall performance of the website.  We were able to get an overwhelming improvement from the legacy website, and the revamp gained an overall performance of 94%, accessibility of 79%, best practices of 96%, and SEO of 82%, as illustrated below using Google Lighthouse:`,
         contentImages: [
           {
             contentUrl: excellMetric,
@@ -518,18 +524,19 @@ This layout ensures customers immediately see what the project appears to be in 
       { name: 'Prototype', category: 'niche' },
     ],
     introData: {
-      introUrl: ticaBanner,
-      introAlt: `sample alt`,
+      introUrl: `/animations/ticaIntro.webm`,
+      introMp4: `/animations/ticaIntro.mp4`,
+      introAlt: `Tica Intro Image`,
     },
     ctaData: {
-      label: `Read Official Brief`,
+      label: `View Award`,
     },
     calloutData: {
       isNDA: false,
       ndaMessage: ``,
     },
-    url: `#`,
-    link: false,
+    url: `https://www.facebook.com/share/18z6iWjQhb/`,
+    link: true,
     highlightData: {
       primaryText: `10 min read`,
       secondaryText: `Aug 2024 - Feb 2025`,
@@ -547,30 +554,32 @@ This layout ensures customers immediately see what the project appears to be in 
         contentTitle: `Technical Limitations and Trade-Offs`,
         contentDesc: `Due to the framework’s technical capabilities and constraints, our design process was highly iterative, continuously adapting the UI/UX to align with the limitations such as component responsiveness. Our high-value goals:
 
-1. Meet all capstone requirements.
-2. Present and submit a polished design and an app without bugs on or before the capstone deadline.`,
+1. Deliver a polished app and responsive design that statisfy all stakeholder requiremenents.
+2. Exceed user satisfaction goals based on feedback.`,
       },
       {
         name: `The Setup`,
         contentTitle: `Project Kick-Off`,
-        contentDesc: `Our setup consists of us aligning our app to both the client and capstone requirements with a 6-month sprint. We are a group of 5 members—I am among the three devs, our project manager, and our design lead. One of the major requirements we need to meet is integrating an AI.`,
+        contentDesc: `We are a group of 5 members—I am among the three devs (2 front-end developers and 1 back-end developer), our project manager, and our design lead. Together, we aim to meet one of the major requirements: integrating an AI within a 6-month cycle with weekly sprints. At first, we as a group gathered ideas on what the best AI solution to integrate was. With difficulty and availability considered, we ultimately opted for an AI that uses the camera to detect facial expressions and determine emotions shown; however, as the project scope requirements were finalized, we opted for an AI that uses voice only; see Figure 1.2.
+
+Note: The client’s identity remained anonymous for this case study to respect the privacy of the partner organization. We maintained continuous feedback with the said client through on-site interviews to determine and translate their requirements.`,
         contentImages: [
           {
-            contentUrl: ticaBanner,
+            contentUrl: ticaDraft1,
             contentAlt: `Tica First Draft`,
-            contentImgDesc: `Figure 1. Tica's banner with brief description on its purpose.`,
+            contentImgDesc: `Figure 1. The early concept focused on expanding the user experience through multi-modal gameplay.`,
           },
           {
             contentUrl: ticaDraft,
             contentAlt: `Tica Final Lesson User Flow`,
-            contentImgDesc: `Figure 1.2. Final Lesson User Flow`,
+            contentImgDesc: `Figure 1.2. Initial design explorations for the primary user journey and flow.`,
           },
         ],
       },
       {
         name: `The Process`,
         contentTitle: `Developing the Lesson and Quiz Screens`,
-        contentDesc: `We came up with lessons and quizzes that are simple and easy to follow and made it into an engaging game. Each lesson chapter is based on the level in the articulation hierarchy. The articulation hierarchy is a structured approach in speech therapy to teach a child to produce a sound correctly.
+        contentDesc: `At first, our early iterations do not follow a structure, and we have yet to figure out which lesson and quiz modules are best to apply; see Figure 1. However, as we continued to consult our client, we came up with lesson and quiz gameplay based on articulation hierarchy and ensured that we made it simple and easy to follow. Each lesson chapter is based on the level in the articulation hierarchy. The articulation hierarchy is a structured approach in speech therapy to teach a child to produce a sound correctly.
 
 However, due to the project scope limitation, we opt for 4 out of 8 levels. Each chapter follows this sequence: Discrimination > Isolation > Syllables > Words. The first level, discrimination, is the step where the correct sound and the sound they make must be distinguished. Isolation is the stage where a child must produce the sound by itself. Syllables are the stages where sounds and vowels (vowel-consonant (VC) or consonant-vowel (CV)) combine. Lastly, words are the stage where a child must practice using sounds in words.
 
@@ -584,42 +593,44 @@ The goal is to not only help the user speak a word correctly but also help them 
           {
             contentUrl: ticaLesson,
             contentAlt: `sample`,
-            contentImgDesc: `Figure 1.4. Final production lesson and quiz screens`,
+            contentImgDesc: `Figure 1.4. Finalized production screens for course content and assessments.`,
           },
         ],
       },
       {
         name: ``,
-        contentTitle: `Color Selection`,
-        contentDesc: `While standard WCAG contrast ratios were a benchmark, our primary design goal was to prevent cognitive fatigue. For a younger demographic, we opted for various approach that moves away from the traditional standards. We highly emphasized soft visuals, emotional connection, and personalization.`,
+        contentTitle: `Color Selection & Asset Creation`,
+        contentDesc: `While standard WCAG contrast ratios were a benchmark, our primary design goal was to prevent cognitive fatigue. For a younger demographic, we opted for various approaches that move away from the traditional standards. We highly emphasized soft visuals, emotional connection, and personalization.
+
+In Figure 1.6, we created custom assets to establish emotional connection and make each lesson and quiz less intimidating and more engaging. Our mascots, from left to right, are Tica, our giraffe; Chuck the chicken, who originally was a white chicken, but we opted for a brown-feathered one as it is the most common you can see in the country; and finally, our brand poster mascot, Finn the fox, who's always bright and cheerful! My fellow front-end dev developed Chuck the chicken, our design lead made Finn the fox, and I developed Tica the giraffe.`,
         contentImages: [
           {
-            contentUrl: ticaBanner,
+            contentUrl: ticaColors,
             contentAlt: `sample`,
-            contentImgDesc: `Figure 1.5. Sample`,
+            contentImgDesc: `Figure 1.5. Provided multi-theme support with client-validated color profiles that allow users to choose between the visual intensities of the interface based on the user's personal comfort and environmental lighting.`,
           },
           {
-            contentUrl: ticaReference,
+            contentUrl: ticaAsset,
             contentAlt: `sample`,
-            contentImgDesc: `Figure 1.6. Sample`,
+            contentImgDesc: `Figure 1.6. Custom-made assets (icons and components included) developed exclusively for this app.`,
           },
         ],
       },
     ],
     goals: [
       {
-        heading: `Sample`,
-        desc: `Sample`,
+        heading: `On-schedule Delivery`,
+        desc: `Met all high-value objectives, ensuring a production-ready submission within the 6-month cycle while maintaining a solid stability on the final version of the app.`,
       },
       {
-        heading: `Sample`,
-        desc: `Sample`,
+        heading: `Positive User Feedback`,
+        desc: `In adherence to privacy and collective data ownership rules, raw metrics have been abstracted. The qualitative feedback we received includes reports about minor layout responsiveness inconsistencies and suggestions like reducing interaction cost on the login screen. However, user testing validated our core design, specifically noting the user-friendly interface and engaging interactive elements as key strengths of the app.`,
       },
     ],
     learnings: [
       {
-        heading: `Sample`,
-        desc: `Sample`,
+        heading: `Workflow Growth and System Design`,
+        desc: `This project taught us the importance of establishing a design system and taking workflow optimization into account. While we initially maintained visual integrity through manually adjusting our screens and components and adhering to our style, this experience became the blueprint for our transition into systematic design. We are able to integrate automation—such as Auto Layout and tokens—during the final sprints. This approach directly improved our workflow during my internship, where I and a co-intern (yes, the other front-end dev in this project) successfully established our first formal design system.`,
       },
     ],
   },
