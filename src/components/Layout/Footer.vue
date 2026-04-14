@@ -81,7 +81,7 @@ const props = defineProps({
   margin-top: 48px;
 }
 .copyright-text {
-  color: var(--text-muted);
+  color: var(--text-tertiary);
   font-size: var(--text-label);
 }
 </style>
