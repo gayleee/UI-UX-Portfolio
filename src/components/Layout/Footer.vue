@@ -4,7 +4,7 @@
       <div class="footer-top">
         <div class="d-flex justify-content-center gap-5">
           <a
-            href="#"
+            href="www.linkedin.com/in/catherine-torres-60215a34a"
             target="_blank"
             rel="noopener noreferrer"
             class="social-link"
@@ -12,11 +12,17 @@
           >
             <linkedinIcon class="icon-svg" />
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X">
+          <a
+            href="https://x.com/cath_uiux"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+            aria-label="X"
+          >
             <xtwitterIcon class="icon-svg" />
           </a>
           <a
-            href="#"
+            href="https://bsky.app/profile/cath-uiux.bsky.social"
             target="_blank"
             rel="noopener noreferrer"
             class="social-link"
