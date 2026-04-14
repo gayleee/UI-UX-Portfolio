@@ -4,7 +4,7 @@
       <div class="footer-top">
         <div class="d-flex justify-content-center gap-5">
           <a
-            href="www.linkedin.com/in/catherine-torres-60215a34a"
+            href="https://www.linkedin.com/in/catherine-torres-60215a34a"
             target="_blank"
             rel="noopener noreferrer"
             class="social-link"
