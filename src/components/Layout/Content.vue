@@ -30,7 +30,7 @@
               <img
                 :src="img.contentUrl"
                 :alt="img.contentAlt"
-                class="img-fluid rounded shadow-sm figure-img"
+                class="img-fluid shadow-sm figure-img"
                 loading="lazy"
               />
             </a>
@@ -116,6 +116,10 @@ const props = defineProps({
   width: 100%;
   object-fit: cover;
   max-height: 70vh;
+}
+
+.figure-img {
+  border-radius: var(--border-radius-4);
 }
 
 @media only screen and (max-width: 600px) {

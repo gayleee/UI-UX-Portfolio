@@ -52,13 +52,6 @@
       :section-index="index"
     />
 
-    <!-- <section class="container section-wrapper">
-      <span class="mb-4 text-subtitle">Impact and Outcomes</span>
-      <div v-for="(item, index) in currentStudy.learnings" :key="index">
-        <Learnings :learning="item" />
-      </div>
-    </section> -->
-
     <section class="container section-wrapper">
       <span class="text-subtitle">Learnings and Reflections</span>
       <div v-for="(item, index) in currentStudy.cards" :key="index">
@@ -73,7 +66,6 @@
 </template>
 
 <script setup>
-// import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { studies } from '@/data/studies'
 
@@ -86,7 +78,6 @@ import IntroImage from '../Layout/IntroImage.vue'
 import Callout from '../Layout/Callout.vue'
 import SecondaryButton from '../Layout/SecondaryButton.vue'
 import Card from '../Layout/Card.vue'
-import Learnings from '../Layout/Learnings.vue'
 import Pagination from '../Layout/Pagination.vue'
 
 const route = useRoute()

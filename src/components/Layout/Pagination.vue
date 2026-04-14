@@ -9,13 +9,13 @@
         <ChevronDoubleLeftIcon
           :style="{
             color:
-              currentIndex === studies.length - 1 ? 'var(--text-muted)' : 'var(--text-secondary)',
+              currentIndex === studies.length - 1 ? 'var(--text-muted)' : 'var(--text-primary)',
           }"
         />
         <span
           :style="{
             color:
-              currentIndex === studies.length - 1 ? 'var(--text-muted)' : 'var(--text-secondary)',
+              currentIndex === studies.length - 1 ? 'var(--text-muted)' : 'var(--text-primary)',
           }"
           >Previous</span
         >

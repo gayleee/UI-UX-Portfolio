@@ -89,7 +89,7 @@
   /* Text Color Dark Mode */
   --text-primary: var(--color-gray-dark-50);
   --text-secondary: var(--color-gray-dark-300);
-  --text-tertiary: var(--color-gray-dark-700);
+  --text-tertiary: var(--color-gray-dark-500);
   --text-muted: var(--color-gray-dark-900);
   --text-accent: var(--color-orange-dark-500);
   --text-status: var(--color-green-dark-500);

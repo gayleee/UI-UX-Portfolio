@@ -31,7 +31,6 @@ import excellGuide from '@/assets/excellAssets/excellGuide.webp'
 import excellFile from '@/assets/excellAssets/excellFile.webp'
 import excellMetric from '@/assets/excellAssets/excellMetric.webp'
 
-// import ticaBanner from '@/assets/ticaAssets/ticaBanner.webp'
 import ticaDraft from '@/assets/ticaAssets/ticaDraft.webp'
 import ticaDraft1 from '@/assets/ticaAssets/ticaDraft1.webp'
 import ticaChallenge from '@/assets/ticaAssets/ticaChallenge.webp'
@@ -63,8 +62,8 @@ export const studies = [
       { name: 'Design System', category: 'niche' },
     ],
     introData: {
-      introUrl: `/animations/ootuAnimation.webm`,
-      introMp4: `/animations/ootuAnimation.webm`,
+      introUrl: `/animations/ootuIntro.webm`,
+      introMp4: `/animations/ootuIntro.webm`,
       introAlt: `Order of the Undead Intro Image`,
     },
     ctaData: {
@@ -147,7 +146,7 @@ The solution is to separate them into two sides and condense the method into one
           },
           {
             contentUrl: grimoireSecondPage,
-            contentAlt: `sample`,
+            contentAlt: `Grimoire Second Page`,
             contentImgDesc: `Figure 1.5. Grimoire Second Page.`,
           },
         ],
@@ -215,10 +214,6 @@ In the story—SPOILER ALERT—our main character performs the spell in a gravey
       {
         heading: `Designing for Environmental Versatility`,
         desc: `Assets was effective for the character’s primary setting: the cafe. However, I identified a disconnect between the dialogue window and background images. My takeaway is to implement variants early to account for narrative and environmental context. Designing for immersion is always a good thing, but it must be done with all possible settings within the scope.`,
-      },
-      {
-        heading: `Style Pivot`,
-        desc: `Coming from a minimalist and corporate-based design background, this project challenged me to embrace design by storytelling, where I learned how to balance thematic elements (like the hand-drawn notebook style) with UI standards. This project is the definition of "show, don't tell."`,
       },
     ],
   },
@@ -363,6 +358,7 @@ The color scheme is simple: the 60-30-10 rule is applied. I also went with the c
     ],
     introData: {
       introUrl: excellThumbnail,
+      introMp4: excellThumbnail,
       introAlt: `Excell Energy Intro Image`,
     },
     ctaData: {
@@ -565,9 +561,7 @@ For instance, we wanted to add icons to our lesson and quiz buttons, but as simp
       {
         name: ``,
         contentTitle: `Project Kick-Off`,
-        contentDesc: `We are a group of 5 members with me among the three devs (2 front-end developers and 1 back-end developer), our project manager, and our design lead. Together, we aim to meet one of the major requirements: integrating an AI within a 6-month cycle with weekly sprints. At first, we as a group gathered ideas on what the best AI solution to integrate was. With difficulty and availability considered, we ultimately opted for an AI that uses the camera to detect facial expressions and determine emotions shown; however, as the project scope requirements were finalized, we opted for an AI that recognizes speech; see Figure 1.4.
-
-Note: The client’s identity remained anonymous for this case study to respect the privacy of the partner organization. We maintained continuous feedback with the said client through on-site interviews to determine and translate their requirements.`,
+        contentDesc: `We are a group of 5 members with me among the three devs (2 front-end developers and 1 back-end developer), our project manager, and our design lead. Together, we aim to meet one of the major requirements: integrating an AI within a 6-month cycle with weekly sprints. At first, we as a group gathered ideas on what the best AI solution to integrate was. With difficulty and availability considered, we opted for an AI that uses the camera to detect facial expressions and determine emotions shown; however, as the project scope requirements were finalized, we ultimately opted for an AI that recognizes speech; see Figure 1.6. later in the process section.`,
         contentImages: [
           {
             contentUrl: ticaDraft1,
@@ -584,16 +578,16 @@ Note: The client’s identity remained anonymous for this case study to respect 
       {
         name: `The Process`,
         contentTitle: `Developing the Core Functionality`,
-        contentDesc: `At first, our early iterations do not follow a structure, and we have yet to figure out which lesson and quiz modules are best to apply; see Figure 1. However, as we continued to consult our client, we came up with lesson and quiz gameplay based on articulation hierarchy and ensured that we made it simple and easy to follow. Each lesson chapter is based on the level in the articulation hierarchy. The articulation hierarchy is a structured approach in speech therapy to teach a child to produce a sound correctly.
+        contentDesc: `At first, our early iterations do not follow a structure (see Figure 1.3., above), and we have yet to figure out which lesson and quiz modules are best to apply. However, as we continued to consult our client, we came up with lesson and quiz gameplay based on articulation hierarchy. Articulation hierarchy is a structured approach in speech therapy to teach a child to produce a sound correctly.
 
 However, due to the project scope limitation, we opt for 4 out of 8 levels. Each chapter follows this sequence: Discrimination > Isolation > Syllables > Words. The first level, discrimination, is the step where the correct sound and the sound they make must be distinguished. Isolation is the stage where a child must produce the sound by itself. Syllables are the stages where sounds and vowels (vowel-consonant (VC) or consonant-vowel (CV)) combine. Lastly, words are the stage where a child must practice using sounds in words.
 
-The goal is to not only help the user speak a word correctly but also help them physically practice it through visuals and AI speech recogniztion system; see Figure 1.5.`,
+The goal is to not only help the user speak a word correctly but also help them physically practice it through visuals and AI speech recogniztion system; see Figure 1.6.`,
         contentImages: [
           {
             contentUrl: ticaReference,
-            contentAlt: `TICA Articulation Heirarchy`,
-            contentImgDesc: `Figure 1.5. Applied gated progression system where quiz modules remain locked until the prerequisite lesson content is completed.`,
+            contentAlt: `TICA Reference Materials`,
+            contentImgDesc: `Figure 1.5. These are the reference materials gathered during the on-site interview with the client.`,
           },
           {
             contentUrl: ticaLesson,
@@ -605,17 +599,19 @@ The goal is to not only help the user speak a word correctly but also help them 
       {
         name: ``,
         contentTitle: `Shaping the TICA Experience`,
-        contentDesc: `Beyond the visuals, we structured the learning modules in a linear, gated format, as mentioned in Figure 1.5. This intentional application of Slow Design prevents cognitive overwhelm and encourages intentionality, ensuring that users pause for reflection and discussion rather than rushing through.`,
+        contentDesc: `Beyond the visuals, we structured the learning modules in a gated progression system where quiz modules remain locked until the prerequisite lesson content is completed; see Figure 1.6. above. This intentional application of Slow Design prevents cognitive overwhelm and encourages intentionality, ensuring that users pause for reflection and discussion rather than rushing through.
+        
+For our font choices, Lexend Deca is chosen for the body text as it is short and wide, which creates enough "breathing room" that makes reading clear. On the other hand, Passion One is chosen as the display font, as it is tall and narrow, which creates the emphasis we needed for important text like call-to-action buttons.`,
         contentImages: [
           {
             contentUrl: ticaFonts,
             contentAlt: `TICA Fonts`,
-            contentImgDesc: `Figure 1.7. Final Fonts.`,
+            contentImgDesc: `Figure 1.7. Final app typography and usage.`,
           },
           {
             contentUrl: ticaDesign,
             contentAlt: `TICA Design`,
-            contentImgDesc: `Figure 1.8. Lesson and Quiz Success Screens.`,
+            contentImgDesc: `Figure 1.8. Lesson and Quiz Success Screens as the result of the slow design approach.`,
           },
         ],
       },
@@ -624,17 +620,17 @@ The goal is to not only help the user speak a word correctly but also help them 
         contentTitle: `Designing for the Sensory`,
         contentDesc: `While standard WCAG contrast ratios were a benchmark, our primary design goal was to prevent cognitive fatigue. For a younger demographic, we opted for various approaches that move away from the traditional standards. We highly emphasized soft visuals, emotional connection, and personalization.
 
-In Figure 1.6, we created custom assets to establish emotional connection and make each lesson and quiz less intimidating and more engaging. Our mascots, from left to right, are Tica, our giraffe; Chuck the chicken, who originally was a white chicken, but we opted for a brown-feathered one as it is the most common you can see in the country; and finally, our brand poster mascot, Finn the fox, who's always bright and cheerful! My fellow front-end dev developed Chuck the chicken, our design lead made Finn the fox, and I developed Tica the giraffe.`,
+In Figure 1.9.1, we created custom assets to establish emotional connection and make each lesson and quiz less intimidating and more engaging. Our mascots, from left to right, are Tica, our giraffe; Chuck the chicken, who originally was a white chicken, but we opted for a brown-feathered one as it is the most common you can see in the country; and finally, our brand poster mascot, Finn the fox, who's always bright and cheerful! My fellow front-end dev developed Chuck the chicken, our design lead made Finn the fox, and I developed Tica the giraffe.`,
         contentImages: [
           {
             contentUrl: ticaColors,
             contentAlt: `TICA Color Palette`,
-            contentImgDesc: `Figure 1.9. Provided multi-theme support with client-validated color profiles that allow users to choose between the visual intensities of the interface based on the user's personal comfort and environmental lighting.`,
+            contentImgDesc: `Figure 1.9. Provided multi-theme support with client-validated color palette that allow users to choose between the visual intensities of the interface based on the user's personal comfort and environmental lighting.`,
           },
           {
             contentUrl: ticaAsset,
             contentAlt: `TICA Asset Set`,
-            contentImgDesc: `Figure 1.9.1. Custom-made assets (icons and components included) developed exclusively for this app.`,
+            contentImgDesc: `Figure 1.9.1. Custom-made assets (icons and components included) developed exclusively for this app using Figma.`,
           },
         ],
       },
@@ -649,7 +645,7 @@ In Figure 1.6, we created custom assets to establish emotional connection and ma
         heading: `Workflow Growth and System Design`,
         desc: `This project taught us the importance of establishing a design system and taking workflow optimization into account. While we initially maintained visual integrity through manually adjusting our screens and components and adhering to our style, this experience became the blueprint for our transition into systematic design. We are able to integrate automation—such as Auto Layout and tokens—during the final sprints. 
         
-This approach directly improved our workflow during my internship, where I and a co-intern (yes, the other front-end dev in this project) successfully established our first formal design system.`,
+This approach directly improved our workflow during internship, where I and a co-intern (yes, the other front-end dev in this project) successfully established our first formal design system.`,
       },
     ],
   },
