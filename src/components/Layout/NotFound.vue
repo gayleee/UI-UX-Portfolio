@@ -1,45 +1,22 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="d-flex align-items-center justify-content-center mascot-container">
-          <video
-            v-if="!isDark"
-            key="light"
-            autoplay
-            muted
-            loop
-            playsinline
-            src="@/assets/404.mp4"
-            class="mascot w-50"
-            type="video/mp4"
-          ></video>
-
-          <video
-            v-else
-            key="dark"
-            autoplay
-            muted
-            loop
-            playsinline
-            src="@/assets/404Dark.mp4"
-            class="mascot w-50"
-            type="video/mp4"
-          ></video>
+  <div class="wrapper d-flex align-items-center justify-content-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-11 col-md-8 col-lg-6 text-center d-flex flex-column align-items-center">
+          <h1 class="mb-4">404: Page Not Found</h1>
+          <p class="mb-4">
+            This link is a bit lost in the sauce! We couldn't find the page you requested.
+          </p>
+        </div>
+        <div v-for="content in ctaContents" :key="content.label">
+          <CTAButton
+            v-if="ctaContents[0]"
+            :cta="ctaContents[0]"
+            :url="ctaContents[0].url"
+            :isExternal="ctaContents[0].link"
+          ></CTAButton>
         </div>
       </div>
-      <div class="d-flex align-items-center justify-content-center">
-        <h4>404: Meow Not Found!</h4>
-      </div>
-      <div class="d-flex align-items-center justify-content-center">
-        <p>
-          This link is a bit lost in the sauce! We couldn't find the page you requested. Where would
-          you like to go next?
-        </p>
-      </div>
-      <!-- <div v-for="item in ctaContents" :key="item.label">
-        <CTAButton :cta="item"></CTAButton>
-      </div> -->
     </div>
   </div>
 </template>
@@ -51,10 +28,20 @@ import { useTheme } from '@/Composable/theme'
 
 const ctaContents = reactive([
   {
-    label: 'Back to Home',
-    link: '/',
+    label: `Return to Home`,
+    url: `/`,
+    link: false,
   },
 ])
 
 const { isDark } = useTheme()
 </script>
+
+<style scoped>
+.wrapper {
+  min-height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  background-color: var(--bg-main);
+}
+</style>

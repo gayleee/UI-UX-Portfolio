@@ -1,7 +1,7 @@
 <template>
   <div v-if="category">
     <div class="tag" :class="category">
-      <span>{{ label }}</span>
+      <span class="text-label">{{ label }}</span>
     </div>
   </div>
 </template>
@@ -19,30 +19,20 @@ const props = defineProps({
 })
 </script>
 
-<style>
+<style scoped>
 .tag {
-  font-size: 14px;
+  background-color: var(--container-secondary);
+  border: 1px solid var(--outline-tertiary);
+  color: var(--text-tertiary);
+  font-size: var(--text-label);
   padding-right: 12px;
   padding-left: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
-  border-radius: 4px;
+  border-radius: var(--border-radius-4);
+  backdrop-filter: var(--blur-subtle);
+  -webkit-backdrop-filter: var(--blur-subtle);
   width: fit-content;
-  transition: ease-in-out 0.3s;
-}
-.tag.platform {
-  color: var(--secondary-text);
-  background-color: var(--secondary-color);
-  border: 1px solid var(--secondary-border);
-}
-.tag.niche {
-  color: var(--secondary-text);
-  background-color: var(--secondary-color);
-  border: 1px solid var(--secondary-border);
-}
-.tag.tools {
-  color: var(--secondary-text);
-  background-color: var(--secondary-color);
-  border: 1px solid var(--secondary-border);
+  cursor: default;
 }
 </style>

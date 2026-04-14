@@ -24,10 +24,10 @@ const props = defineProps({
 }
 
 .callout {
-  color: var(--accent-color);
+  color: var(--text-accent);
   background-color: rgba(175, 87, 10, 0.1);
-  border: 1px solid var(--accent-color);
-  border-radius: 8px;
+  border: 1px solid var(--text-accent);
+  border-radius: var(--border-radius-4);
   padding: 1rem 1.5rem;
   word-wrap: break-word;
   overflow-wrap: break-word;

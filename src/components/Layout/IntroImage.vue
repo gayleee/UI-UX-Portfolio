@@ -47,9 +47,9 @@ const isVideo = (url) => {
 .intro-img {
   width: 100%;
   max-width: 1300px;
-  aspect-ratio: 21 / 9;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
 }
 
 @media (max-width: 768px) {

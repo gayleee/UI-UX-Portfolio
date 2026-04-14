@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex align-items-center justify-content-center mt-4 pt-4">
+  <div class="d-flex align-items-center justify-content-center my-4 pt-4">
     <router-link v-if="isHomePage" to="/about">
       <img :src="profile" alt="Profile Image" />
     </router-link>
@@ -24,6 +24,6 @@ const isHomePage = computed(() => {
 img {
   width: 200px;
   height: 200px;
-  border-radius: 4px;
+  border-radius: var(--border-radius-4);
 }
 </style>

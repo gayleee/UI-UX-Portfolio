@@ -1,105 +1,108 @@
 <template>
-  <main class="container vh-100 d-flex align-items-center justify content-center" id="hero-section">
-    <div class="row my-5 py-5 g-0">
-      <div
-        class="d-flex flex-column align-items-center justify-content-center mt-5 pt-5 greeting-container"
-      >
-        <!--Heading-->
-        <transition name="fade" mode="out-in">
-          <span :key="currentGreeting.language" class="language">
-            {{ currentGreeting.language }}
-          </span>
-        </transition>
-        <h1 class="heading text-center">
-          I design UI/UX across diverse niches—building systems that solves real-world problems.
-        </h1>
-        <!--Highlight-->
+  <main>
+    <section
+      class="container vh-100 d-flex align-items-center justify content-center"
+      id="hero-section"
+    >
+      <div class="row my-5 py-5 g-0">
         <div
-          v-for="highlightContent in highlightContents"
-          :key="highlightContent.primaryText"
-          class="mb-5"
+          class="d-flex flex-column align-items-center justify-content-center mt-5 pt-5 greeting-container"
         >
-          <Highlight :highlight="highlightContent"></Highlight>
-        </div>
+          <!--Heading-->
+          <transition name="fade" mode="out-in">
+            <span :key="currentGreeting.language" class="language text-title">
+              {{ currentGreeting.language }}
+            </span>
+          </transition>
+          <h1 class="text-center text-headline">
+            I design UI/UX across diverse niches—building systems that solves real-world problems.
+          </h1>
+          <!--Highlight-->
+          <div
+            v-for="highlightContent in highlightContents"
+            :key="highlightContent.primaryText"
+            class="mb-5"
+          >
+            <Highlight :highlight="highlightContent"></Highlight>
+          </div>
 
-        <!--CTA Button-->
-        <div class="hero-section">
-          <CTAButton
-            v-if="ctaContents[0]"
-            :cta="ctaContents[0]"
-            :url="ctaContents[0].url"
-            :isExternal="ctaContents[0].link"
-          />
+          <!--CTA Button-->
+          <div class="hero-section">
+            <CTAButton
+              v-if="ctaContents[0]"
+              :cta="ctaContents[0]"
+              :url="ctaContents[0].url"
+              :isExternal="ctaContents[0].link"
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!--Logo-->
+    <section class="container-fluid section-inverted" id="client-section">
+      <div class="row">
+        <div class="col d-flex flex-column align-items-center justify-content-center p-3 p-md-5">
+          <span class="text-light text-center my-4 text-subtitle">Worked with</span>
+
+          <div class="d-flex flex-wrap gap-4 justify-content-center">
+            <img
+              v-for="logo in logos"
+              :key="logo.url"
+              :src="logo.url"
+              :alt="logo.alt"
+              class="img-fluid logo"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="row">
+        <div class="col mt-5 pt-5">
+          <!--Case Studies-->
+          <span class="text-subtitle">Case Studies</span>
+          <div v-for="study in studies" :key="study.id" class="col">
+            <CaseStudyList :caseStudy="study" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container-fluid section-inverted" id="bio-section">
+      <div class="row">
+        <div class="col">
+          <!--Profile Image-->
+          <ProfileImage />
+          <!--SubHeading-->
+          <div class="text-center mb-5">
+            <span class="my-4 text-light text-subtitle">All Roads Lead to Design.</span>
+            <p>
+              No matter the complexity, the path to a scalable result always circles back to
+              intentional design. Let’s build that together.
+            </p>
+          </div>
+          <!--CTA Button-->
+          <div class="bio-section">
+            <CTAButton
+              v-if="ctaContents[1]"
+              :cta="ctaContents[1]"
+              :url="ctaContents[1].url"
+              :isExternal="ctaContents[1].link"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-
-  <!--Logo-->
-  <div class="container-fluid darker-bg-dark" id="client-section">
-    <div class="row">
-      <div class="col d-flex flex-column align-items-center justify-content-center p-3 p-md-5">
-        <h5 class="text-light text-center m-4">Worked with</h5>
-
-        <div class="d-flex flex-wrap gap-4 justify-content-center">
-          <img
-            v-for="logo in logos"
-            :key="logo.url"
-            :src="logo.url"
-            :alt="logo.alt"
-            class="img-fluid logo"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <section class="container">
-    <div class="row">
-      <div class="col mt-5 pt-5">
-        <!--Case Studies-->
-        <h5>Case Studies</h5>
-        <div v-for="study in studies" :key="study.id" class="col">
-          <CaseStudyList :caseStudy="study" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container-fluid darker-bg-dark" id="bio-section">
-    <div class="row">
-      <div class="col">
-        <!--Profile Image-->
-        <ProfileImage />
-        <!--SubHeading-->
-        <div class="text-center mb-5">
-          <h4 class="mt-4 text-light">All Roads Lead to Design.</h4>
-          <p style="color: #f8f8f8">
-            No matter the complexity, the path to a scalable result always circles back to
-            intentional design. Let’s build that together.
-          </p>
-        </div>
-        <!--CTA Button-->
-        <div class="bio-section">
-          <CTAButton
-            v-if="ctaContents[1]"
-            :cta="ctaContents[1]"
-            :url="ctaContents[1].url"
-            :isExternal="ctaContents[1].link"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
 import { reactive } from 'vue'
-import { useRouter } from 'vue-router'
 import { studies } from '@/data/studies'
 
-// import Header from '../Layout/Header.vue'
 import CaseStudyList from '../CaseStudy/CaseStudyList.vue'
 import ProfileImage from '../Layout/ProfileImage.vue'
 import Highlight from '../Layout/Highlight.vue'
@@ -154,17 +157,18 @@ const highlightContents = reactive([
   {
     primaryText: `Available for Work`,
     secondaryText: ``,
-    theme: `green`,
+    theme: `highlight-status`,
   },
 ])
 </script>
 
-<style>
+<style scoped>
 .language {
-  color: #a82a04;
-  font-size: 32px;
-  font-weight: medium;
+  color: var(--text-accent);
+  font-size: var(--text-title);
+  text-align: center;
 }
+
 .fade-enter-active,
 .fade-leave-active {
   transition:
@@ -198,17 +202,6 @@ const highlightContents = reactive([
   margin-top: -60px;
   padding-top: 100px;
 }
-/* #hero-section {
-  clip-path: inset(0% 0% 0% 0% round 0 0 80px 80px);
-  position: relative;
-  z-index: 2;
-  padding-bottom: 80px;
-}
-#client-section {
-  margin-top: -80px;
-  padding-top: 100px;
-  z-index: 1;
-} */
 
 @media only screen and (max-width: 600px) {
   section.darker-bg-dark {

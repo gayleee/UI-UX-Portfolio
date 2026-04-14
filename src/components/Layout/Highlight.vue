@@ -31,30 +31,51 @@ const props = defineProps({
 }
 .secondaryText,
 .primaryText {
+  font-weight: var(--weight-semibold);
   white-space: normal;
   max-width: 100%;
 }
 
-.lightOrange .primaryText {
-  color: var(--lighter-accent);
-  font-size: 18px;
-  text-align: center;
-}
-.lightOrange .secondaryText {
-  color: #fff;
-  font-size: 18px;
-  text-align: center;
-}
-.lightOrange .circle {
-  background-color: var(--lighter-accent);
+.highlight-metadata .circle {
+  background-color: var(--text-accent);
 }
 
-.orange .primaryText {
-  color: var(--accent-color);
-  font-size: 18px;
+.highlight-metadata .primaryText {
+  color: var(--text-accent);
+  font-size: var(--text-body);
   text-align: center;
 }
-.orange .circle {
-  background-color: var(--accent-color);
+
+.highlight-metadata .secondaryText {
+  color: var(--text-secondary);
+  font-size: var(--text-body);
+  text-align: center;
+}
+
+.highlight-role .circle {
+  background-color: var(--text-accent-on-dark);
+}
+
+.highlight-role .primaryText {
+  color: var(--text-accent-on-dark);
+  font-size: var(--text-body);
+  text-align: center;
+}
+
+.highlight-role .secondaryText {
+  color: var(--white);
+  font-size: var(--text-body);
+  text-align: center;
+}
+
+.highlight-status .primaryText,
+.highlight-status .secondaryText {
+  color: var(--text-status);
+  font-size: var(--text-body);
+  text-align: center;
+}
+
+.highlight-status .circle {
+  background-color: var(--text-status);
 }
 </style>

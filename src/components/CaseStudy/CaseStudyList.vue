@@ -1,5 +1,5 @@
 <template>
-  <div class="row my-5 entry">
+  <div class="row my-5 entry-container">
     <div class="col-12">
       <div class="d-flex flex-column flex-lg-row gap-4 mb-4">
         <router-link
@@ -27,27 +27,27 @@
             :to="{ name: 'CaseStudy', params: { slug: caseStudy.slug } }"
             class="d-block mb-1"
           >
-            <span class="fs-5 fw-semibold title">{{ caseStudy.name }}</span>
+            <span class="mb-2 study-name-text">{{ caseStudy.name }}</span>
           </router-link>
 
-          <p class="text-muted mb-2">
+          <p class="mb-2">
             <small>
-              <span class="length me-2">{{ caseStudy.length }}</span>
-              <span class="readtime">{{ caseStudy.readTime }}</span>
+              <span class="me-2 study-length-text">{{ caseStudy.length }}</span>
+              <span class="read-time-text">{{ caseStudy.readTime }}</span>
             </small>
           </p>
 
-          <p class="desc mb-3">{{ caseStudy.desc }}</p>
+          <p class="mb-3 text-body">{{ caseStudy.desc }}</p>
 
-          <div class="d-flex flex-wrap gap-2 tags">
+          <div class="d-flex flex-wrap gap-2 tags-container">
             <div v-for="(item, index) in caseStudy.tag" :key="index">
               <Tag :label="item.name" :category="item.category" />
             </div>
           </div>
 
-          <div v-if="caseStudy.award" class="award mt-3 d-flex gap-2 align-items-center">
-            <i :class="caseStudy.icon" style="color: #666"></i>
-            <span class="fw-semibold award-text small">{{ caseStudy.award }}</span>
+          <div v-if="caseStudy.award" class="mt-3 d-flex gap-2 align-items-center award-container">
+            <trophyfillIcon style="color: var(--text-tertiary)" />
+            <small class="award-text">{{ caseStudy.award }}</small>
           </div>
         </div>
       </div>
@@ -56,6 +56,7 @@
 </template>
 
 <script setup>
+import trophyfillIcon from '../icons/trophyfillIcon.vue'
 import Tag from '../Layout/Tag.vue'
 
 const props = defineProps({
@@ -66,35 +67,53 @@ const props = defineProps({
 })
 </script>
 
-<style>
-a {
-  text-decoration: none;
-  color: #000;
-  transition: ease-in-out 0.3s;
+<style scoped>
+.study-name-text {
+  color: var(--text-primary);
+  font-size: var(--text-body-lg);
+  font-family: var(--font-body-lg);
+  font-weight: var(--weight-bold);
+  transition: 0.3s ease-in-out;
 }
-a:hover {
-  color: #271b79;
+
+.study-name-text:hover {
+  color: var(--text-accent);
 }
-p {
-  color: #2b2b2b;
+
+.study-length-text {
+  color: var(--text-secondary);
+  font-size: var(--text-label);
+  font-weight: var(--weight-normal);
+  text-align: center;
 }
-.entry img {
-  min-width: 520px;
-  height: 272px;
+
+.read-time-text {
+  color: var(--text-accent);
+  font-size: var(--text-label);
+  font-weight: var(--weight-normal);
+  text-align: center;
 }
-.readtime {
-  color: #402dcc;
-}
+
 .award-text {
-  color: #666;
+  color: var(--text-tertiary);
+  font-size: var(--text-label);
+  font-weight: var(--weight-semibold);
+  text-align: center;
+  margin: 0;
+  line-height: 1.2;
 }
+
+.award-container svg {
+  flex-shrink: 0;
+}
+
 .video-container {
   flex: 0 0 auto;
   width: 100%;
   max-width: 520px;
   aspect-ratio: 520 / 272;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: var(--border-radius-4);
   display: block;
 }
 .thumbnail-video {
@@ -104,18 +123,41 @@ p {
   display: block;
 }
 
-@media only screen and (max-width: 600px) {
-  .entry,
-  .award {
+@media only screen and (max-width: 990px) {
+  .entry-container,
+  .award-container {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
   }
-  .tags {
+
+  .award-text {
+    text-align: left;
+  }
+
+  .col-12 .d-flex.flex-column {
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .thumbnail-video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .tags-container {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     text-align: center;
     width: 100%;

@@ -1,53 +1,25 @@
 <template>
-  <div class="row">
-    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-      <img
-        :src="brochureFront"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="Tekken Brochure Front Page"
-      />
-      <img
-        :src="jobListing"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="ChanChan Games Logo Redesign Mockup"
-      />
-    </div>
-
-    <div class="col-lg-4 mb-4 mb-lg-0">
-      <img
-        :src="ccgamesLogo"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="Mountains in the Clouds"
-      />
-      <img
-        :src="utahime"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="Tekken Brochure Back Page"
-      />
-    </div>
-
-    <div class="col-lg-4 mb-4 mb-lg-0">
-      <img :src="brochureBack" class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
-      <img
-        :src="igbeLogo"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="Yosemite National Park"
-      />
-    </div>
+  <div class="gallery-item">
+    <img :src="gallery.imageUrl" :alt="gallery.imageAlt" class="w-100" />
   </div>
-  <!-- Gallery -->
 </template>
 
 <script setup>
-import brochureFront from '@/assets/galleryAssets/brochureFront.webp'
-import brochureBack from '@/assets/galleryAssets/brochureBack.webp'
-import ccgamesLogo from '@/assets/galleryAssets/ccgamesLogo.webp'
-import utahime from '@/assets/galleryAssets/utahime.webp'
-import igbeLogo from '@/assets/galleryAssets/igbeLogo.webp'
-import jobListing from '@/assets/galleryAssets/jobListing.webp'
-
 const props = defineProps({
-  galleryImages: String,
-  galleryAlts: String,
+  gallery: Object,
 })
 </script>
+
+<style scoped>
+.gallery-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  break-inside: avoid;
+}
+
+img {
+  border-radius: var(--border-radius-4);
+  display: block;
+}
+</style>

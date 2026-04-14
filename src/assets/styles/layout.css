@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+section {
+  padding: var(--padding-y) var(--padding-x);
+}
+
+.section-inverted {
+  padding: var(--padding-y-fluid) var(--padding-x-fluid);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}

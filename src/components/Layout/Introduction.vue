@@ -1,7 +1,9 @@
 <template>
-  <p class="text-center">
-    {{ intro }}
-  </p>
+  <div>
+    <p class="text-center">
+      {{ intro }}
+    </p>
+  </div>
 </template>
 
 <script setup>

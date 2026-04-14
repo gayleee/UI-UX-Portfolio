@@ -1,12 +1,17 @@
 <template>
-  <Transition>
-    <a href="#" type="button" class="btn totop" v-if="isVisible" aria-label="Scroll to top">
-      <i class="bi bi-arrow-up"></i>
-    </a>
-  </Transition>
+  <div>
+    <Transition>
+      <a href="#" type="button" class="btn totop" v-if="isVisible" aria-label="Scroll to top">
+        <arrowupIcon />
+      </a>
+    </Transition>
+  </div>
 </template>
+
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import arrowupIcon from '../icons/arrowupIcon.vue'
+
 const isVisible = ref(false)
 
 const handleScroll = () => {
@@ -29,7 +34,7 @@ onUnmounted(() => {
 <style scoped>
 .v-enter-active,
 .v-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease;
 }
 
 .v-leave-to,
@@ -38,8 +43,9 @@ onUnmounted(() => {
 }
 
 .btn {
-  background-color: var(--accent-color);
-  color: #fff;
+  color: var(--white);
+  border-radius: var(--border-radius-4);
+  background-color: var(--container-primary);
   border: none;
   position: fixed;
   bottom: 20px;
@@ -48,7 +54,7 @@ onUnmounted(() => {
 }
 
 .btn:hover {
-  background-color: #8b2303;
+  background-color: var(--container-primary-hover);
 }
 
 .btn:focus,
@@ -57,18 +63,14 @@ onUnmounted(() => {
   outline: 0;
 }
 
-.btn:hover {
-  background-color: #701b02;
-}
-
 .btn:active,
 .btn.active {
-  background-color: #d14d06;
-  border-color: #d14d06;
-  color: #fff;
+  background-color: var(--container-primary-hover);
+  border-color: var(--container-primary-hover);
+  color: var(--white);
 }
 
 .btn-custom-orange:focus {
-  box-shadow: 0 0 0 0.25rem rgba(239, 89, 8, 0.25);
+  box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--color-orange-light-900), transparent 50%);
 }
 </style>

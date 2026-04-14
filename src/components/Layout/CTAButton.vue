@@ -26,16 +26,16 @@ const props = defineProps({
 })
 </script>
 
-<style>
+<style scoped>
 .cta {
   display: inline-block;
-  color: #fff;
-  padding: 16px 26px;
-  font-size: 24px;
-  font-weight: 600;
-  background-color: var(--accent-color);
-  border-radius: 8px;
-  box-shadow: 0px 8px 24px rgba(168, 42, 4, 0.2);
+  color: var(--white);
+  padding: var(--space-md) var(--space-lg);
+  font-size: var(--text-subtitle);
+  font-weight: var(--weight-semibold);
+  background-color: var(--container-primary);
+  border-radius: var(--border-radius-4);
+  box-shadow: 0px 8px 24px color-mix(in srgb, var(--color-orange-light-900), transparent 50%);
   transition: all 0.3s ease-in-out;
   text-decoration: none;
   border: none;
@@ -43,10 +43,10 @@ const props = defineProps({
 .cta:hover,
 .cta.router-link-active:hover,
 .cta.router-link-exact-active:hover {
-  color: #fff;
-  background-color: #8b2303;
-  transform: translateY(-3px);
-  box-shadow: 0px 12px 28px rgba(168, 42, 4, 0.3);
+  color: var(--white);
+  background-color: var(--container-primary-hover);
+  transform: translateY(-4px);
+  box-shadow: 0px 12px 28px color-mix(in srgb, var(--color-orange-dark-900), transparent 50%);
 }
 
 .cta:active,

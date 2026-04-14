@@ -1,34 +1,34 @@
 <template>
-  <router-link to="/" class="btn">Back to Home</router-link>
+  <router-link to="/" class="btn">Return to Home</router-link>
 </template>
 
 <style scoped>
 .btn {
   display: inline-block;
   align-self: center;
-  color: var(--secondary-text);
   padding: 16px 26px;
-  font-size: 24px;
-  font-weight: 400;
-  background-color: var(--secondary-color);
-  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: var(--text-subtitle);
+  font-weight: var(--weight-regular);
   transition: all 0.3s ease-in-out;
   text-decoration: none;
-  border: 1px solid var(--secondary-border);
+  background-color: var(--container-secondary);
+  border-radius: var(--border-radius-4);
+  border: 1px solid var(--outline-secondary);
 }
 .btn:hover,
 .btn.router-link-active:hover,
 .btn.router-link-exact-active:hover {
   color: var(--secondary-text);
-  background-color: var(--secondary-color);
-  border: 1px solid var(--secondary-border);
+  background-color: var(--container-secondary);
+  border: 1px solid var(--outline-secondary);
   transform: translateY(-3px);
 }
 
 .btn:active,
 .btn.router-link-active:active {
-  background-color: var(--secondary-color);
-  border: 1px solid var(--secondary-border);
+  background-color: var(--container-secondary);
+  border: 1px solid var(--outline-secondary);
   transform: translateY(0);
   filter: brightness(0.9);
 }

@@ -21,7 +21,7 @@ const { isDark, toggleTheme } = useTheme()
 
 <style scoped>
 .form-switch .form-check-input:checked {
-  background-color: #ef5908;
-  border-color: #ef5908;
+  background-color: var(--color-orange-dark-500);
+  border-color: var(--color-orange-dark-500);
 }
 </style>

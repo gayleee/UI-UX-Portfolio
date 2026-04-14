@@ -4,13 +4,15 @@
       <div class="col-12">
         <div>
           <div class="d-flex">
-            <h4>{{ contents.name }}</h4>
+            <span class="mb-4 text-subtitle">{{ contents.name }}</span>
           </div>
-          <h5 class="challengeTitle mt-4">{{ contents.contentTitle }}</h5>
+          <span
+            class="mt-4 text-body-lg"
+            style="font-weight: var(--weight-medium); font-size: var(--text-subtitle)"
+            >{{ contents.contentTitle }}</span
+          >
           <p class="mt-2">
             {{ contents.contentDesc }}
-            <strong v-if="contents.contentStrong">{{ contents.contentStrong }}</strong>
-            {{ contents.contentDesc1 }}
           </p>
         </div>
 
@@ -45,7 +47,7 @@
               <div class="modal-dialog modal-fullscreen">
                 <div class="modal-content">
                   <div class="modal-header border-bottom-0">
-                    <h1 class="modal-title fs-5">{{ contents.contentTitle }}</h1>
+                    <span class="modal-title text-subtitle">{{ contents.contentTitle }}</span>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                   </div>
                   <div class="modal-body text-center p-0">
@@ -60,8 +62,8 @@
               </div>
             </div>
 
-            <figcaption v-if="img.contentImgDesc" class="mt-2">
-              <small class="text-muted">{{ img.contentImgDesc }}</small>
+            <figcaption v-if="img.contentImgDesc" class="mt-2 text-label">
+              <small>{{ img.contentImgDesc }}</small>
             </figcaption>
           </figure>
         </div>
@@ -83,12 +85,13 @@ const props = defineProps({
   margin: 48px auto;
   max-width: 1000px;
 }
+
 .btn {
-  background-color: var(--accent-color);
+  background-color: var(--container-primary);
   border: none;
 }
 .btn:hover {
-  background-color: #8b2303;
+  background-color: var(--container-primary-hover);
 }
 .btn:focus,
 .btn:active:focus,
@@ -100,20 +103,20 @@ const props = defineProps({
 .btn:active,
 .btn.active,
 .show > .btn-primary.dropdown-toggle {
-  background-color: #d14d06;
-  border-color: #d14d06;
-  color: #fff;
+  background-color: var(--container-primary-hover);
+  border-color: var(--outline-primary);
+  color: var(--white);
 }
 
 .btn-custom-orange:focus {
-  box-shadow: 0 0 0 0.25rem rgba(239, 89, 8, 0.25);
+  box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--color-orange-light-900), transparent 50%);
 }
 
-/* .content-img {
+.content-img {
   width: 100%;
   object-fit: cover;
   max-height: 70vh;
-} */
+}
 
 @media only screen and (max-width: 600px) {
   .content {

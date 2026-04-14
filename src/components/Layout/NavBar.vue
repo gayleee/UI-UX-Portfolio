@@ -2,8 +2,8 @@
   <header class="navbar navbar-expand-lg bg-body-tertiary fixed-top p-4">
     <div class="container-fluid">
       <router-link class="navbar-brand d-flex align-items-center justiy-content-center" to="/"
-        ><img src="/src/assets/icon.svg" alt="icon" class="me-2" /><span
-          >cath_ui/ux</span
+        ><img src="/src/assets/icon.svg" alt="icon" class="me-2" /><span class="text-body"
+          >Cath_UI/UX</span
         ></router-link
       >
 
@@ -24,7 +24,7 @@
         aria-labelledby="offcanvasNavbarLabel"
       >
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Explore More</h5>
+          <span class="offcanvas-title text-subtitle" id="offcanvasNavbarLabel">Explore More</span>
           <button
             type="button"
             class="btn-close"
@@ -45,7 +45,7 @@
             </li>
             <!--Toggle Theme-->
             <li class="nav-item">
-              <div class="nav-link d-flex align-items-center">
+              <div class="d-flex align-items-center">
                 <Toggle-theme></Toggle-theme>
               </div>
             </li>
@@ -62,8 +62,17 @@ import ToggleTheme from './ToggleTheme.vue'
 
 <style scoped>
 .navbar-brand img {
-  width: 24px;
-  height: 24px;
+  width: var(--icon-md);
+  height: var(--icon-md);
+}
+
+.nav-link {
+  color: var(--text-primary);
+}
+
+.nav-link:hover,
+.navbar-nav .nav-link.router-link-exact-active {
+  color: var(--text-accent);
 }
 
 @media only screen and (max-width: 600px) {

@@ -32,7 +32,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Cath_UI/UX Portfolio. All rights reserved.</p>
+        <p class="copyright-text">&copy; 2026 Cath_UI/UX Portfolio. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -48,3 +48,40 @@ const props = defineProps({
   required: true,
 })
 </script>
+
+<style scoped>
+.footer-container {
+  min-height: 280px;
+  padding: 80px 0 48px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.footer-top {
+  margin-bottom: 48px;
+}
+.icon-svg {
+  color: var(--text-tertiary);
+  width: var(--icon-md);
+  height: var(--icon-md);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.social-link:hover .icon-svg {
+  color: var(--text-accent);
+  transform: scale(1.2) translateY(-5px);
+}
+.footer-hr {
+  width: 64px;
+  margin: 0 auto;
+  border-top: 2px solid var(--text-accent);
+  opacity: 1;
+}
+.footer-bottom {
+  margin-top: 48px;
+}
+.copyright-text {
+  color: var(--text-muted);
+  font-size: var(--text-label);
+}
+</style>
