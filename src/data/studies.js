@@ -588,7 +588,7 @@ Note: The client’s identity remained anonymous for this case study to respect 
 
 However, due to the project scope limitation, we opt for 4 out of 8 levels. Each chapter follows this sequence: Discrimination > Isolation > Syllables > Words. The first level, discrimination, is the step where the correct sound and the sound they make must be distinguished. Isolation is the stage where a child must produce the sound by itself. Syllables are the stages where sounds and vowels (vowel-consonant (VC) or consonant-vowel (CV)) combine. Lastly, words are the stage where a child must practice using sounds in words.
 
-The goal is to not only help the user speak a word correctly but also help them physically practice it through visuals and AI speech recogniztion system; see Figure 1.4.`,
+The goal is to not only help the user speak a word correctly but also help them physically practice it through visuals and AI speech recogniztion system; see Figure 1.5.`,
         contentImages: [
           {
             contentUrl: ticaReference,
