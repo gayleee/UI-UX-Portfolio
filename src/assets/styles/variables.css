@@ -18,14 +18,14 @@
   --container-primary: var(--color-orange-light-500);
   --container-primary-hover: var(--color-orange-light-700);
   --container-secondary: var(--neutral-100);
-  --container-tertiary: var(--neutral-200);
+  --container-tertiary: var(--neutral-800);
   --container-success: var(--color-green-light-200);
 
   /* Border Color Light Mode */
   --outline-primary: var(--color-gray-light-100);
   --outline-secondary: var(--color-gray-light-200);
   --outline-tertiary: var(--color-gray-light-300);
-  --outline-muted: var(--color-gray-light-400);
+  --outline-muted: var(--color-gray-light-800);
   --outline-accent: var(--color-orange-light-400);
   --outline-success: var(--color-green-light-500);
 

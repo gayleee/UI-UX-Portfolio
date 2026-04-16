@@ -7,6 +7,7 @@
       <trophyfillIcon v-if="card.award" />
       <bookfillIcon v-else-if="card.workshop" />
       <envelopefillIcon v-else-if="card.contact" />
+      <globeIcon v-else-if="card.language" />
       <lightbulbfillIcon v-else />
     </div>
 
@@ -22,6 +23,7 @@ import lightbulbfillIcon from '../icons/lightbulbfillIcon.vue'
 import trophyfillIcon from '../icons/trophyfillIcon.vue'
 import bookfillIcon from '../icons/bookfillIcon.vue'
 import envelopefillIcon from '../icons/envelopefillIcon.vue'
+import globeIcon from '../icons/globeIcon.vue'
 
 const props = defineProps({
   card: Object,

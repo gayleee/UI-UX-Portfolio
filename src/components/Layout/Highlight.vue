@@ -23,12 +23,6 @@ const props = defineProps({
 </script>
 
 <style scoped>
-.circle {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
 .secondaryText,
 .primaryText {
   font-weight: var(--weight-semibold);

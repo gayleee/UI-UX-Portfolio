@@ -120,7 +120,7 @@ export const studies = [
         contentTitle: `UX Discovery: Layout Effectiveness`,
         contentDesc: `Visual novels often have mini-games, and this project is no exception. This mode is a cooking game and it is an integral part of the story as the ending paths rely on this. The premise is that our main character works for a cafe to build her new life, where she meets new characters and learns about their preferences. However, there are three major problems: Unclear visual hierarchy, High interaction cost, and an overloaded cognitive load.
 
-The solution is to separate them into two sides and condense the method into one preparation point (a kiosk) and use F-pattern layout. It allows the players to naturally scan categories and ingredients that is placed near each other.`,
+The solution is to separate them into two sides and condense the method into one preparation point (a kiosk) and use Z-pattern layout. It allows the players to naturally scan categories and ingredients that is placed near each other.`,
         contentImages: [
           {
             contentUrl: ootuDraft,
@@ -130,7 +130,7 @@ The solution is to separate them into two sides and condense the method into one
           {
             contentUrl: ootuDraftFix,
             contentAlt: `Order of the Undead Fixed Layout`,
-            contentImgDesc: `Figure 1.3. Preliminary Design Layout. The final production version was simplified to accommodate a reduced asset set while maintaining the UX principles established in this draft.`,
+            contentImgDesc: `Figure 1.3. Preliminary Design Layout. The final production version was simplified to accommodate a reduced asset set while maintaining the UX established in this draft.`,
           },
         ],
       },
@@ -190,24 +190,12 @@ In the story—SPOILER ALERT—our main character performs the spell in a gravey
       {
         name: `Impact and Outcomes`,
         contentTitle: `Met All High Value Goals`,
-        contentDesc: `Finalized all UI/UX deliverables on-time within the first 7 days of the 30-day sprint, ensuring that the Art and other departments can work on their part without waiting for assets without compromising the pre-defined narrative outcomes, maintaining the integrity of the original content through scalable UX design.`,
+        contentDesc: `All UI/UX deliverables were completed on time within the first 7 days of the 30-day sprint. This enabled the art and other departments to work simultaneously on their tasks. Additionally, all of the screens and user flow aligned with the design so that it kept the integrity of the plot.`,
       },
       {
         name: ``,
         contentTitle: `Established Design System and Library`,
-        contentDesc: `A total of 122 individual assets, which include 30+ components with various states and 33 finalized screens and custom icons excluded, were part of a full design system.`,
-        contentImages: [
-          {
-            contentUrl: ootuAssetSet,
-            contentAlt: `Order of the Undead Production Assets`,
-            contentImgDesc: `Figure 1.8. Production assets prepared for this case study only.`,
-          },
-          {
-            contentUrl: ootuExplorations,
-            contentAlt: `Order of the Undead Asset Explorations`,
-            contentImgDesc: `Figure 1.9. Early design explorations.`,
-          },
-        ],
+        contentDesc: `Established a design system of over 120 assets to maintain visual and functional integrity across the game. This ecosystem of screens, components, and states reduces design redundancy and speeds development time as well as providing a roadmap for future contributors to improve the game.`,
       },
     ],
     cards: [
@@ -259,9 +247,7 @@ In the story—SPOILER ALERT—our main character performs the spell in a gravey
       secondaryText: `Solo`,
       theme: `highlight-role`,
     },
-    roleDesc: `In this competition, participants are one-man teams. This project showcases my ability to independently manage the entire product lifecycle, from planning to file handoff that we are all too used to performing in groups.
-
-With nothing but a tight deadline and skills fresh from the internship, I proudly tackled the challenge with one goal in mind: create a platform that meets user expectations that is easy to follow and where information is not bombarded.`,
+    roleDesc: `In this competition, participants are one-man teams. This project showcases my ability to independently manage the entire product lifecycle, from planning to file handoff that we are all too used to performing in groups. I tackled the challenge with one goal in mind: create a platform that meets user expectations that is easy to follow and where information is not bombarded.`,
     contents: [
       {
         name: `The Challenge`,
@@ -502,7 +488,7 @@ This layout ensures customers immediately see what the project appears to be in 
     animationMp4: `/animations/ticaAnimation.mp4`,
     thumbnailUrl: ticaThumbnail,
     thumbnailAlt: `ticaThumbnail`,
-    desc: `Our capstone project—a mobile application developed over 6 months, offering an AI-powered speech therapy for children with Childhood apraxia of speech (CAS). Built with Kivy, an open-source Python framework for developing GUI across various platforms. Notably, this project was also entered and competed in a week-long hybrid innovation event open to all PUPSTC students.`,
+    desc: `Our capstone project—a gamified mobile application developed over 6 months, offering an AI-powered speech therapy for children with Childhood apraxia of speech (CAS). Built with Kivy, an open-source Python framework for developing GUI across various platforms. Notably, this project was also entered and competed in a week-long hybrid innovation event open to all PUPSTC students.`,
     readTime: ` • 10 min read`,
     length: `August 2024 - February 2025`,
     award: `3ʳᵈ,  ISKOnnovation: The GDSC Ideathon 2024`,
@@ -510,7 +496,6 @@ This layout ensures customers immediately see what the project appears to be in 
       { name: 'Android', category: 'platform' },
       { name: 'Figma', category: 'tools' },
       { name: 'Python', category: 'tools' },
-      { name: 'Gamified App', category: 'niche' },
       { name: 'Prototype', category: 'niche' },
     ],
     introData: {

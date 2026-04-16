@@ -38,17 +38,48 @@
       </div>
     </section>
 
-    <section class="container">
-      <span class="mb-4 text-subtitle">Awards, Recognition, and Workshops</span>
-      <div class="d-flex flex-column gap-2 my-4">
-        <div v-for="card in cardContents" :key="card.heading">
-          <Card :card="card" />
+    <!--Logo-->
+    <section class="container-fluid section-inverted" id="client-section">
+      <div class="row d-flex align-items-center justify-content-center">
+        <div class="col">
+          <div class="d-flex flex-column align-items-center justify-content-center">
+            <span class="text-light my-4 text-subtitle">Tech Stack</span>
+            <div class="d-flex flex-wrap gap-4 justify-content-center">
+              <div v-for="skill in skillContents" :key="skill.desc" class="logo-wrapper">
+                <img :src="skill.url" :alt="skill.alt" class="img-fluid logo" />
+                <span class="tooltip-text">{{ skill.name }}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="container">
-      <span class="mb-4 text-subtitle">Works Outside UI/UX</span>
+      <span class="mb-4 text-subtitle">Awards</span>
+      <div class="d-flex flex-column gap-2 my-4">
+        <div v-for="card in cardContents" :key="card.desc">
+          <Card :card="card" />
+        </div>
+      </div>
+      <span class="mb-4 text-subtitle">Language</span>
+      <div class="d-flex flex-column gap-2 mt-4">
+        <div v-for="lang in langContents" :key="lang.desc">
+          <Card :card="lang" />
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="d-flex flex-wrap align-items-center gap-2">
+        <span class="text-subtitle">Works Outside UI/UX</span>
+
+        <div class="d-flex align-items-center gap-2">
+          <div class="circle" style="background-color: var(--container-primary)"></div>
+          <span class="text-subtitle" style="color: var(--text-accent)">Graphic Design</span>
+        </div>
+      </div>
+
       <div class="my-4 gallery-wrapper">
         <div v-for="image in galleryContents" :key="image.imageUrl">
           <Gallery :gallery="image" />
@@ -66,6 +97,7 @@ import Highlight from '../Layout/Highlight.vue'
 import CTAButton from '../Layout/CTAButton.vue'
 import Gallery from '../Layout/Gallery.vue'
 import Card from '../Layout/Card.vue'
+import Modal from '../Layout/Modal.vue'
 
 import brochureFront from '@/assets/galleryAssets/brochureFront.webp'
 import brochureBack from '@/assets/galleryAssets/brochureBack.webp'
@@ -73,6 +105,11 @@ import ccgamesLogo from '@/assets/galleryAssets/ccgamesLogo.webp'
 import utahime from '@/assets/galleryAssets/utahime.webp'
 import igbeLogo from '@/assets/galleryAssets/igbeLogo.webp'
 import jobListing from '@/assets/galleryAssets/jobListing.webp'
+
+import html from '/src/assets/techLogos/html.webp'
+import css from '/src/assets/techLogos/css.webp'
+import bootstrap from '/src/assets/techLogos/bootstrap.webp'
+import vue from '/src/assets/techLogos/vue.webp'
 
 const highlightContents = reactive([
   {
@@ -101,50 +138,60 @@ const cardContents = reactive([
     award: true,
     workshop: false,
   },
+])
+
+const skillContents = reactive([
+  { url: html, alt: `HTML Logo`, name: `HTML` },
+  { url: css, alt: `CSS Logo`, name: `CSS` },
+  { url: bootstrap, alt: `Bootstrap Logo`, name: `Bootstrap 5.3` },
+  { url: vue, alt: `Vue Logo`, name: `Vue.JS` },
+])
+
+const langContents = reactive([
   {
-    desc: 'ISKOnnovation: Sparking a Culture of Innovation and Multidisciplinary Collaboration towards Sustainable Future',
-    award: false,
-    workshop: true,
+    desc: 'Filipino - Mother Tongue',
+    language: true,
   },
   {
-    desc: 'Techquest: Decoding the Matrix of Software Development',
-    award: false,
-    workshop: true,
-  },
-  {
-    desc: 'Empower IT: Celebrating Women In Tech | Webinar',
-    award: false,
-    workshop: true,
-  },
-  {
-    desc: 'Unlocking your Research Potential: Research Writing Essentials, Presentations, and Publications',
-    award: false,
-    workshop: true,
+    desc: 'English',
+    language: true,
   },
 ])
 
 const galleryContents = reactive([
   {
+    id: `design-0`,
+    name: `Tekken 8 Brochure - Front Page`,
     imageUrl: brochureFront,
     imageAlt: `Tekken Brochure Front Page`,
   },
   {
+    id: `design-1`,
+    name: `Job Listing Designs`,
     imageUrl: jobListing,
-    imageAlt: `Job Listing Graphic Design`,
+    imageAlt: `Job Listing Designs`,
   },
   {
+    id: `design-2`,
+    name: `ChanChan Games Logo Redesign`,
     imageUrl: ccgamesLogo,
     imageAlt: `ChanChan Games Logo Redesign`,
   },
   {
+    id: `design-3`,
+    name: `Utahime Sprite Custom Design`,
     imageUrl: utahime,
     imageAlt: `Utahime Sprite Custom Design`,
   },
   {
+    id: `design-4`,
+    name: `Tekken 8 Brochure - Back Page`,
     imageUrl: brochureBack,
     imageAlt: `Tekken Brochure Back Page`,
   },
   {
+    id: `design-5`,
+    name: `I'm Gonna Be Evil - Visual Novel Logo Design`,
     imageUrl: igbeLogo,
     imageAlt: `I'm Gonna Be Evil Visual Novel Logo Design`,
   },
@@ -162,6 +209,10 @@ const galleryContents = reactive([
 .about-text {
   color: var(--text-body);
   line-height: 1.8;
+}
+
+.d-flex.align-items-center.gap-2 {
+  white-space: nowrap;
 }
 
 .gallery-wrapper {

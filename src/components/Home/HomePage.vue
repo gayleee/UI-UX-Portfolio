@@ -41,18 +41,30 @@
 
     <!--Logo-->
     <section class="container-fluid section-inverted" id="client-section">
-      <div class="row">
-        <div class="col d-flex flex-column align-items-center justify-content-center p-3 p-md-5">
-          <span class="text-light text-center my-4 text-subtitle">Worked with</span>
+      <div class="row d-flex align-items-center justify-content-center">
+        <div class="col-md">
+          <div class="d-flex flex-column align-items-center justify-content-center p-3 p-md-5">
+            <span class="text-light my-4 text-subtitle">Worked with</span>
+            <div class="d-flex flex-wrap gap-4 justify-content-center">
+              <div v-for="logo in logos" :key="logo.url" class="logo-wrapper">
+                <img :src="logo.url" :alt="logo.alt" class="img-fluid logo" />
+                <span class="tooltip-text">{{ logo.name }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <div class="d-flex flex-wrap gap-4 justify-content-center">
-            <img
-              v-for="logo in logos"
-              :key="logo.url"
-              :src="logo.url"
-              :alt="logo.alt"
-              class="img-fluid logo"
-            />
+        <div class="d-none d-md-block vl"></div>
+
+        <div class="col-md">
+          <div class="d-flex flex-column align-items-center justify-content-center p-3 p-md-5">
+            <span class="text-light my-4 text-subtitle">Design Tools</span>
+            <div class="d-flex flex-wrap gap-4 justify-content-center">
+              <div v-for="tool in tools" :key="tool.url" class="logo-wrapper">
+                <img :src="tool.url" :alt="tool.alt" class="img-fluid logo" />
+                <span class="tooltip-text">{{ tool.name }}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -111,6 +123,13 @@ import CTAButton from '../Layout/CTAButton.vue'
 import chanchan from '/src/assets/clientLogos/chanchangames.webp'
 import excell from '/src/assets/clientLogos/excell.webp'
 import healspace from '/src/assets/clientLogos/healspace.webp'
+import others from '/src/assets/clientLogos/others.webp'
+
+import figma from '/src/assets/toolLogos/figma.webp'
+import miro from '/src/assets/toolLogos/miro.webp'
+import wireframecc from '/src/assets/toolLogos/wireframecc.webp'
+import rive from '/src/assets/toolLogos/rive.webp'
+import medibang from '/src/assets/toolLogos/medibang.webp'
 
 const greetings = [
   {
@@ -135,9 +154,18 @@ onMounted(() => {
 })
 
 const logos = [
-  { url: chanchan, alt: `chanchan logo` },
-  { url: healspace, alt: `healspace logo` },
-  { url: excell, alt: `excell energy logo` },
+  { url: healspace, alt: `Healspace logo`, name: `HealSpace Psychological Clinic` },
+  { url: excell, alt: `Excell energy logo`, name: `Excell Energy Powergen Corp.` },
+  { url: chanchan, alt: `Chanchan logo`, name: `ChanChan Games` },
+  { url: others, alt: `Other clients`, name: `Sugar Moon Studio, DreamLab Therapy Center, etc.` },
+]
+
+const tools = [
+  { url: figma, alt: `Figma Logo`, name: `Figma` },
+  { url: miro, alt: `Miro Lgoo`, name: `Miro` },
+  { url: wireframecc, alt: `Wireframe.cc Logo`, name: `Wireframe.cc` },
+  { url: rive, alt: `Rive Logo`, name: `Rive` },
+  { url: medibang, alt: `Medibang Paint Logo`, name: `Medibang Paint` },
 ]
 
 const ctaContents = reactive([
@@ -186,17 +214,6 @@ const highlightContents = reactive([
   transform: translateY(-10px);
 }
 
-.logo {
-  width: clamp(80px, 20vw, 144px);
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: contain;
-  opacity: 0.4;
-  transition: opacity 0.3s ease;
-}
-.logo:hover {
-  opacity: 1;
-}
 #bio-section {
   clip-path: polygon(0% 0%, 50% 60px, 100% 0%, 100% 100%, 0% 100%);
   margin-top: -60px;
@@ -204,7 +221,7 @@ const highlightContents = reactive([
 }
 
 @media only screen and (max-width: 600px) {
-  section.darker-bg-dark {
+  section.section-inverted {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     padding-left: 4rem;

@@ -35,32 +35,29 @@
               />
             </a>
 
-            <div
-              class="modal fade"
-              :id="'modal-' + sectionIndex + '-' + i"
-              tabindex="-1"
-              aria-hidden="true"
-              data-bs-focus="false"
-              data-bs-backdrop="true"
-              data-bs-keyboard="true"
-            >
-              <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content">
-                  <div class="modal-header border-bottom-0">
-                    <span class="modal-title text-subtitle">{{ contents.contentTitle }}</span>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                  </div>
-                  <div class="modal-body text-center p-0">
-                    <img :src="img.contentUrl" class="img-fluid" :alt="img.contentAlt" />
-                  </div>
-                  <div class="modal-footer border-top-0">
-                    <button type="button" class="btn text-light" data-bs-dismiss="modal">
-                      Close
-                    </button>
+            <Teleport to="#modal-root">
+              <div
+                class="modal fade"
+                :id="'modal-' + sectionIndex + '-' + i"
+                tabindex="-1"
+                aria-modal="true"
+                data-bs-focus="false"
+                data-bs-backdrop="true"
+                data-bs-keyboard="true"
+              >
+                <div class="modal-dialog modal-fullscreen">
+                  <div class="modal-content">
+                    <div class="modal-header border-bottom-0">
+                      <span class="modal-title text-subtitle">{{ contents.contentTitle }}</span>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body text-center p-0">
+                      <img :src="img.contentUrl" class="img-fluid" :alt="img.contentAlt" />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Teleport>
 
             <figcaption v-if="img.contentImgDesc" class="mt-2 text-label">
               <small>{{ img.contentImgDesc }}</small>
@@ -73,6 +70,8 @@
 </template>
 
 <script setup>
+import Modal from '../Layout/Modal.vue'
+
 const props = defineProps({
   contents: Object,
   sectionIndex: Number,
@@ -84,32 +83,6 @@ const props = defineProps({
   padding: 0;
   margin: 48px auto;
   max-width: 1000px;
-}
-
-.btn {
-  background-color: var(--container-primary);
-  border: none;
-}
-.btn:hover {
-  background-color: var(--container-primary-hover);
-}
-.btn:focus,
-.btn:active:focus,
-.btn-primary:focus {
-  box-shadow: none;
-  outline: 0;
-}
-
-.btn:active,
-.btn.active,
-.show > .btn-primary.dropdown-toggle {
-  background-color: var(--container-primary-hover);
-  border-color: var(--outline-primary);
-  color: var(--white);
-}
-
-.btn-custom-orange:focus {
-  box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--color-orange-light-900), transparent 50%);
 }
 
 .content-img {
