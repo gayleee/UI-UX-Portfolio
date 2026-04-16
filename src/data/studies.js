@@ -409,7 +409,7 @@ In order to solve this problem, we came up with various design sprint but we fel
         contentImages: [
           {
             contentUrl: excellCardDraft,
-            contentAlt: `excell Previous Card`,
+            contentAlt: `Excell Previous CMS Card`,
             contentImgDesc: `Figure 1.3. Previous CMS with baked-in metadata.`,
           },
           {

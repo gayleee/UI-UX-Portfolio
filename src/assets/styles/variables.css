@@ -64,7 +64,7 @@
   --space-md: var(--size-16);
   --space-lg: var(--size-24);
   --space-xl: var(--size-32);
-  --space-2xl: var(--size-64);
+  --space-2xl: var(--size-48);
 
   /* Padding */
   --padding-x: clamp(1.5rem, 5vw, 4.375rem);

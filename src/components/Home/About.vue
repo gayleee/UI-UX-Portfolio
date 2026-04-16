@@ -43,7 +43,7 @@
       <div class="row d-flex align-items-center justify-content-center">
         <div class="col">
           <div class="d-flex flex-column align-items-center justify-content-center">
-            <span class="text-light my-4 text-subtitle">Tech Stack</span>
+            <span class="text-light mb-4 text-subtitle">Tech Stack</span>
             <div class="d-flex flex-wrap gap-4 justify-content-center">
               <div v-for="skill in skillContents" :key="skill.desc" class="logo-wrapper">
                 <img :src="skill.url" :alt="skill.alt" class="img-fluid logo" />
@@ -81,16 +81,20 @@
       </div>
 
       <div class="my-4 gallery-wrapper">
-        <div v-for="image in galleryContents" :key="image.imageUrl">
-          <Gallery :gallery="image" />
-        </div>
+        <Gallery
+          v-for="image in galleryContents"
+          :key="image.imageUrl"
+          :gallery="image"
+          @open="openModal"
+        />
+        <Modal v-if="activeItem" :modal="activeItem" :show="true" @close="closeModal" />
       </div>
     </section>
   </main>
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 
 import ProfileImage from '../Layout/ProfileImage.vue'
 import Highlight from '../Layout/Highlight.vue'
@@ -110,6 +114,16 @@ import html from '/src/assets/techLogos/html.webp'
 import css from '/src/assets/techLogos/css.webp'
 import bootstrap from '/src/assets/techLogos/bootstrap.webp'
 import vue from '/src/assets/techLogos/vue.webp'
+
+const activeItem = ref(null)
+
+function openModal(item) {
+  activeItem.value = item
+}
+
+function closeModal() {
+  activeItem.value = null
+}
 
 const highlightContents = reactive([
   {

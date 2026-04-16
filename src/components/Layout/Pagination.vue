@@ -1,5 +1,5 @@
 <template>
-  <div class="container my-5">
+  <div class="container my-4">
     <footer class="d-flex align-items-center justify-content-between">
       <button
         @click="prevStudy"

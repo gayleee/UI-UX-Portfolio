@@ -40,11 +40,11 @@
     </section>
 
     <!--Logo-->
-    <section class="container-fluid section-inverted" id="client-section">
+    <section class="container-fluid section-inverted">
       <div class="row d-flex align-items-center justify-content-center">
         <div class="col-md">
-          <div class="d-flex flex-column align-items-center justify-content-center p-3 p-md-5">
-            <span class="text-light my-4 text-subtitle">Worked with</span>
+          <div class="d-flex flex-column align-items-center justify-content-center">
+            <span class="text-light mb-4 text-subtitle">Worked with</span>
             <div class="d-flex flex-wrap gap-4 justify-content-center">
               <div v-for="logo in logos" :key="logo.url" class="logo-wrapper">
                 <img :src="logo.url" :alt="logo.alt" class="img-fluid logo" />
@@ -57,8 +57,8 @@
         <div class="d-none d-md-block vl"></div>
 
         <div class="col-md">
-          <div class="d-flex flex-column align-items-center justify-content-center p-3 p-md-5">
-            <span class="text-light my-4 text-subtitle">Design Tools</span>
+          <div class="d-flex flex-column align-items-center justify-content-center">
+            <span class="text-light mb-4 text-subtitle">Design Tools</span>
             <div class="d-flex flex-wrap gap-4 justify-content-center">
               <div v-for="tool in tools" :key="tool.url" class="logo-wrapper">
                 <img :src="tool.url" :alt="tool.alt" class="img-fluid logo" />
@@ -72,7 +72,7 @@
 
     <section class="container">
       <div class="row">
-        <div class="col mt-5 pt-5">
+        <div class="col mt-2 pt-2">
           <!--Case Studies-->
           <span class="text-subtitle">Case Studies</span>
           <div v-for="study in studies" :key="study.id" class="col">

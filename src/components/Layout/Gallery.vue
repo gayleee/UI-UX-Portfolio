@@ -1,26 +1,17 @@
 <template>
-  <a
-    role="button"
-    data-bs-toggle="modal"
-    :data-bs-target="'#modal-container-' + gallery.id"
-    aria-label="View work"
-  >
+  <a role="button" @click="$emit('open', gallery)">
     <div class="gallery-item">
       <img :src="gallery.imageUrl" :alt="gallery.imageAlt" class="w-100" loading="lazy" />
     </div>
   </a>
-
-  <Teleport to="#modal-root">
-    <Modal :modal="gallery" />
-  </Teleport>
 </template>
 
 <script setup>
-import Modal from '../Layout/Modal.vue'
-
 const props = defineProps({
   gallery: Object,
 })
+
+defineEmits(['open'])
 </script>
 
 <style scoped>

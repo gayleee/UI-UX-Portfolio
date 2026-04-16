@@ -50,12 +50,14 @@
       :key="index"
       :contents="item"
       :section-index="index"
+      @open="openModal"
     />
+    <Modal v-if="activeItem" :modal="activeItem" :show="true" @close="activeItem = null" />
 
     <section class="container section-wrapper">
-      <span class="text-subtitle">Learnings and Reflections</span>
+      <span class="mb-4 text-subtitle">Learnings and Reflections</span>
       <div v-for="(item, index) in currentStudy.cards" :key="index">
-        <Card :card="item" class="my-4" />
+        <Card :card="item" class="mt-4" />
       </div>
     </section>
 
@@ -66,6 +68,7 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { studies } from '@/data/studies'
 
@@ -79,6 +82,7 @@ import Callout from '../Layout/Callout.vue'
 import SecondaryButton from '../Layout/SecondaryButton.vue'
 import Card from '../Layout/Card.vue'
 import Pagination from '../Layout/Pagination.vue'
+import Modal from '../Layout/Modal.vue'
 
 const route = useRoute()
 
@@ -88,6 +92,15 @@ const currentStudy = studies.find((s) => s.slug === studySlug)
 
 // console.log(route.params)
 // console.log(currentStudy.roleData.theme)
+const activeItem = ref(null)
+
+function openModal(img) {
+  activeItem.value = {
+    imageUrl: img.contentUrl,
+    imageAlt: img.contentAlt,
+    name: img.contentAlt,
+  }
+}
 </script>
 
 <style scoped>
