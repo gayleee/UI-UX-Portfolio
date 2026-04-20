@@ -58,7 +58,7 @@
 
         <div class="col-md">
           <div class="d-flex flex-column align-items-center justify-content-center">
-            <span class="text-light mb-4 text-subtitle">Design & Collaboration Tools</span>
+            <span class="text-light mb-4 text-subtitle">Tools</span>
             <div class="d-flex flex-wrap gap-4 justify-content-center">
               <div v-for="tool in tools" :key="tool.url" class="logo-wrapper">
                 <img :src="tool.url" :alt="tool.alt" class="img-fluid logo" />
